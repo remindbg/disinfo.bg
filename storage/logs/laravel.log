@@ -1,0 +1,22 @@
+[2018-02-18 22:10:33] production.ERROR: file_get_contents(/var/www/disinfo.bg/.env): failed to open stream: No such file or directory {"exception":"[object] (ErrorException(code: 0): file_get_contents(/var/www/disinfo.bg/.env): failed to open stream: No such file or directory at /var/www/disinfo.bg/vendor/laravel/framework/src/Illuminate/Foundation/Console/KeyGenerateCommand.php:96)
+[stacktrace]
+#0 [internal function]: Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(2, 'file_get_conten...', '/var/www/disinf...', 96, Array)
+#1 /var/www/disinfo.bg/vendor/laravel/framework/src/Illuminate/Foundation/Console/KeyGenerateCommand.php(96): file_get_contents('/var/www/disinf...')
+#2 /var/www/disinfo.bg/vendor/laravel/framework/src/Illuminate/Foundation/Console/KeyGenerateCommand.php(80): Illuminate\\Foundation\\Console\\KeyGenerateCommand->writeNewEnvironmentFileWith('base64:IF3gYkRv...')
+#3 /var/www/disinfo.bg/vendor/laravel/framework/src/Illuminate/Foundation/Console/KeyGenerateCommand.php(45): Illuminate\\Foundation\\Console\\KeyGenerateCommand->setKeyInEnvironmentFile('base64:IF3gYkRv...')
+#4 [internal function]: Illuminate\\Foundation\\Console\\KeyGenerateCommand->handle()
+#5 /var/www/disinfo.bg/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(29): call_user_func_array(Array, Array)
+#6 /var/www/disinfo.bg/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(87): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#7 /var/www/disinfo.bg/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(31): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#8 /var/www/disinfo.bg/vendor/laravel/framework/src/Illuminate/Container/Container.php(549): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#9 /var/www/disinfo.bg/vendor/laravel/framework/src/Illuminate/Console/Command.php(183): Illuminate\\Container\\Container->call(Array)
+#10 /var/www/disinfo.bg/vendor/symfony/console/Command/Command.php(252): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#11 /var/www/disinfo.bg/vendor/laravel/framework/src/Illuminate/Console/Command.php(170): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#12 /var/www/disinfo.bg/vendor/symfony/console/Application.php(946): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#13 /var/www/disinfo.bg/vendor/symfony/console/Application.php(248): Symfony\\Component\\Console\\Application->doRunCommand(Object(Illuminate\\Foundation\\Console\\KeyGenerateCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#14 /var/www/disinfo.bg/vendor/symfony/console/Application.php(148): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#15 /var/www/disinfo.bg/vendor/laravel/framework/src/Illuminate/Console/Application.php(88): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#16 /var/www/disinfo.bg/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(121): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#17 /var/www/disinfo.bg/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#18 {main}
+"} 
