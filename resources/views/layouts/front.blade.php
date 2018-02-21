@@ -48,6 +48,7 @@
         <!-- ============================================================== -->
         <header class="topbar">
             <nav class="navbar top-navbar navbar-expand-md navbar-light">
+<<<<<<< HEAD
                 <!-- ============================================================== -->
                 <!-- Logo -->
                 <!-- ============================================================== -->
@@ -74,6 +75,34 @@
                 <!-- ============================================================== -->
                 <!-- End Logo -->
                 <!-- ============================================================== -->
+=======
+                <!-- ============================================================== -->
+                <!-- Logo -->
+                <!-- ============================================================== -->
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="index.html">
+                        <!-- Logo icon -->
+                        <b>
+                            <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+                            <!-- Dark Logo icon -->
+                            <img src="../assets/images/logo-icon.png" alt="homepage" class="dark-logo" />
+                            <!-- Light Logo icon -->
+                            <img src="../assets/images/logo-light-icon.png" alt="homepage" class="light-logo" />
+                        </b>
+                        <!--End Logo icon -->
+                        <!-- Logo text -->
+                        <span>
+                            <!-- dark Logo text -->
+                            <img src="../assets/images/logo-text.png" alt="homepage" class="dark-logo" />
+                            <!-- Light Logo text -->
+                            <img src="../assets/images/logo-light-text.png" class="light-logo" alt="homepage" />
+                        </span>
+                    </a>
+                </div>
+                <!-- ============================================================== -->
+                <!-- End Logo -->
+                <!-- ============================================================== -->
+>>>>>>> 485076bdd2595a3e337447d534b84ade88b7383d
                 <div class="navbar-collapse">
                     <!-- ============================================================== -->
                     <!-- toggle and nav items -->
@@ -136,7 +165,11 @@
                                             <!-- Message -->
                                             <a href="#">
                                                 <div class="user-img">
+<<<<<<< HEAD
                                                     <img src="assets/images/users/1.jpg" alt="user" class="img-circle">
+=======
+                                                    <img src="../assets/images/users/1.jpg" alt="user" class="img-circle">
+>>>>>>> 485076bdd2595a3e337447d534b84ade88b7383d
                                                     <span class="profile-status online pull-right"></span>
                                                 </div>
                                                 <div class="mail-contnet">
@@ -148,8 +181,12 @@
                                             <!-- Message -->
                                             <a href="#">
                                                 <div class="user-img">
+<<<<<<< HEAD
                                                     <img src="assets/images/users/2.jpg" alt="user"
                                                          class="img-circle">
+=======
+                                                    <img src="../assets/images/users/2.jpg" alt="user" class="img-circle">
+>>>>>>> 485076bdd2595a3e337447d534b84ade88b7383d
                                                     <span class="profile-status busy pull-right"></span>
                                                 </div>
                                                 <div class="mail-contnet">
@@ -161,7 +198,11 @@
                                             <!-- Message -->
                                             <a href="#">
                                                 <div class="user-img">
+<<<<<<< HEAD
                                                     <img src="assets/images/users/3.jpg" alt="user" class="img-circle">
+=======
+                                                    <img src="../assets/images/users/3.jpg" alt="user" class="img-circle">
+>>>>>>> 485076bdd2595a3e337447d534b84ade88b7383d
                                                     <span class="profile-status away pull-right"></span>
                                                 </div>
                                                 <div class="mail-contnet">
@@ -173,7 +214,11 @@
                                             <!-- Message -->
                                             <a href="#">
                                                 <div class="user-img">
+<<<<<<< HEAD
                                                     <img src="assets/images/users/4.jpg" alt="user" class="img-circle">
+=======
+                                                    <img src="../assets/images/users/4.jpg" alt="user" class="img-circle">
+>>>>>>> 485076bdd2595a3e337447d534b84ade88b7383d
                                                     <span class="profile-status offline pull-right"></span>
                                                 </div>
                                                 <div class="mail-contnet">
@@ -202,14 +247,22 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true"
                                 aria-expanded="false">
+<<<<<<< HEAD
                                 <img src="assets/images/users/1.jpg" alt="user" class="profile-pic" />
+=======
+                                <img src="../assets/images/users/1.jpg" alt="user" class="profile-pic" />
+>>>>>>> 485076bdd2595a3e337447d534b84ade88b7383d
                             </a>
                             <div class="dropdown-menu dropdown-menu-right scale-up">
                                 <ul class="dropdown-user">
                                     <li>
                                         <div class="dw-user-box">
                                             <div class="u-img">
+<<<<<<< HEAD
                                                 <img src="assets/images/users/1.jpg" alt="user">
+=======
+                                                <img src="../assets/images/users/1.jpg" alt="user">
+>>>>>>> 485076bdd2595a3e337447d534b84ade88b7383d
                                             </div>
                                             <div class="u-text">
                                                 <h4>Steave Jobs</h4>
@@ -290,6 +343,7 @@
                                 </li>
                                 <li>
                                     <a href="table-layout.html">Актуални</a>
+<<<<<<< HEAD
                                 </li>
                                 <li>
                                     <a href="table-data-table.html">По Етикети</a>
@@ -359,6 +413,90 @@
                                         </li>
                                         <li>
                                             <a href="widget-charts.html">Вижте Всички</a>
+=======
+                                </li>
+                                <li>
+                                    <a href="table-data-table.html">По Етикети</a>
+                                </li>
+                                <li>
+                                    <a href="table-footable.html">Предложи Новина</a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a class="has-arrow " href="/" aria-expanded="false">
+                                <i class="mdi mdi-bullseye"></i>
+                                <span class="hide-menu">Статии</span>
+                            </a>
+                            <ul aria-expanded="false" class="collapse">
+
+                                <li>
+                                    <a class="has-arrow" href="#" aria-expanded="false">Сортиране</a>
+                                    <ul aria-expanded="false" class="collapse">
+                                        <li>
+                                            <a href="app-email.html">Последните 7 дни</a>
+                                        </li>
+                                        <li>
+                                            <a href="app-email-detail.html">Последни 30 дни</a>
+                                        </li>
+                                        <li>
+                                            <a href="app-compose.html">Най-четени</a>
+>>>>>>> 485076bdd2595a3e337447d534b84ade88b7383d
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+<<<<<<< HEAD
+                                    <a href="widget-charts.html">Последно Добавени</a>
+                                </li>
+                                <li>
+                                    <a href="widget-charts.html">По етикети</a>
+                                </li>
+                                <li>
+                                    <a href="widget-charts.html">Предложете Медия</a>
+                                </li>
+                            </ul>
+                        </li>
+
+=======
+                                    <a href="app-chat.html">Категории</a>
+                                </li>
+                                <li>
+                                    <a href="app-ticket.html">Отметки</a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                        <li class="nav-devider"></li>
+
+
+
+                        <li class="nav-devider"></li>
+                        <li class="nav-small-cap">EXTRA COMPONENTS</li>
+
+                        <li>
+                            <a class="has-arrow " href="#" aria-expanded="false">
+                                <i class="mdi mdi-widgets"></i>
+                                <span class="hide-menu">Списък Медии</span>
+                            </a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li>
+                                    <a class="has-arrow " href="#" aria-expanded="false">Най-компроментирани</a>
+                                    <ul aria-expanded="false" class="collapse">
+                                        <li>
+                                            <a href="widget-apps.html small"> > Widget Apps * 432</a>
+                                        </li>
+                                        <li>
+                                            <a href="widget-data.html">Widget Data</a>
+                                        </li>
+                                        <li>
+                                            <a href="widget-charts.html">Widget Charts</a>
+                                        </li>
+                                        <li>
+                                            <a href="widget-charts.html">Вижте Всички</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -374,6 +512,7 @@
                             </ul>
                         </li>
 
+>>>>>>> 485076bdd2595a3e337447d534b84ade88b7383d
                         <li>
                             <a class="has-arrow " href="#" aria-expanded="false">
                                 <i class="mdi mdi-table"></i>
@@ -440,6 +579,7 @@
                                     </h6>
                                 </div>
 
+<<<<<<< HEAD
                             </div>
 
                             <div class="">
@@ -518,10 +658,53 @@
                         </div>
                     </div>
                     <div class="col-lg-3">
+=======
+                            </div>
+
+                            <div class="">
+                                <button class="right-side-toggle waves-effect waves-light btn-success btn btn-circle btn-sm pull-right m-l-10">
+                                    <i class="ti-settings text-white"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <!-- ============================================================== -->
+                <!-- End Bread crumb and right sidebar toggle -->
+                <!-- ============================================================== -->
+                <!-- ============================================================== -->
+                <!-- Start Page Content -->
+                <!-- ============================================================== -->
+                <!-- Row -->
+                <div class="row">
+                    <div class="col-md-8 col-xlg-9">
+                        <!-- Row -->
+                       
+                        <!-- Row -->
+                        <!-- Row -->
+                        <div class="row">
+                            <!-- Column -->
+                            <div class="col-lg-12">
+                                    <div class="card">
+                                            <div class="card-body">
+                                                <h5>Последни Случаи на Дезинформация</h5>
+                                                <hr>
+                                                
+                                            </div>
+                                    </div>
+                            </div>
+                           
+
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-xlg-3">
+>>>>>>> 485076bdd2595a3e337447d534b84ade88b7383d
                             <div class="card">
                                     <div class="card-body">
                                         <h5>Последни Коментари</h5>
                                         <hr>
+<<<<<<< HEAD
 
                                     </div>
                             </div>
@@ -533,6 +716,19 @@
                         <!-- Column -->
 
 
+=======
+                                        
+                                    </div>
+                            </div>
+                        <!-- Column -->
+                       
+                            
+                        </div>
+                        <!-- Column -->
+                        <!-- Column -->
+                       
+                        
+>>>>>>> 485076bdd2595a3e337447d534b84ade88b7383d
                     </div>
                 </div>
                 <!-- Row -->
@@ -554,6 +750,7 @@
                             <ul id="themecolors" class="m-t-20">
                                 <li>
                                     <b>Светъл Хедър</b>
+<<<<<<< HEAD
                                 </li>
                                 <li>
                                     <a href="javascript:void(0)" data-theme="default" class="default-theme">1</a>
@@ -580,6 +777,34 @@
                                     <a href="javascript:void(0)" data-theme="default-dark" class="default-dark-theme">7</a>
                                 </li>
                                 <li>
+=======
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)" data-theme="default" class="default-theme">1</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)" data-theme="green" class="green-theme">2</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)" data-theme="red" class="red-theme">3</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)" data-theme="blue" class="blue-theme working">4</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)" data-theme="purple" class="purple-theme">5</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)" data-theme="megna" class="megna-theme">6</a>
+                                </li>
+                                <li class="d-block m-t-30">
+                                    <b>Тъмен Хедър</b>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)" data-theme="default-dark" class="default-dark-theme">7</a>
+                                </li>
+                                <li>
+>>>>>>> 485076bdd2595a3e337447d534b84ade88b7383d
                                     <a href="javascript:void(0)" data-theme="green-dark" class="green-dark-theme">8</a>
                                 </li>
                                 <li>
@@ -595,7 +820,11 @@
                                     <a href="javascript:void(0)" data-theme="megna-dark" class="megna-dark-theme ">12</a>
                                 </li>
                             </ul>
+<<<<<<< HEAD
 
+=======
+                            
+>>>>>>> 485076bdd2595a3e337447d534b84ade88b7383d
                         </div>
                     </div>
                 </div>
@@ -605,8 +834,13 @@
             </div>
             <!-- ============================================================== -->
             <!-- End Container fluid  -->
+<<<<<<< HEAD
             <!-- ============================================================== -->
             <!-- ============================================================== -->
+=======
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+>>>>>>> 485076bdd2595a3e337447d534b84ade88b7383d
             <!-- footer -->
             <!-- ============================================================== -->
             <footer class="footer"> © 2017 Material Pro Admin by wrappixel.com </footer>
@@ -624,10 +858,17 @@
     <!-- ============================================================== -->
     <!-- All Jquery -->
     <!-- ============================================================== -->
+<<<<<<< HEAD
     <script src="assets/plugins/jquery/jquery.min.js"></script>
     <!-- Bootstrap tether Core JavaScript -->
     <script src="assets/plugins/bootstrap/js/popper.min.js"></script>
     <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+=======
+    <script src="../assets/plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="../assets/plugins/bootstrap/js/popper.min.js"></script>
+    <script src="../assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+>>>>>>> 485076bdd2595a3e337447d534b84ade88b7383d
     <!-- slimscrollbar scrollbar JavaScript -->
     <script src="js/jquery.slimscroll.js"></script>
     <!--Wave Effects -->
@@ -635,26 +876,44 @@
     <!--Menu sidebar -->
     <script src="js/sidebarmenu.js"></script>
     <!--stickey kit -->
+<<<<<<< HEAD
     <script src="assets/plugins/sticky-kit-master/dist/sticky-kit.min.js"></script>
     <script src="assets/plugins/sparkline/jquery.sparkline.min.js"></script>
     <script src="assets/plugins/sparkline/jquery.sparkline.min.js"></script>
+=======
+    <script src="../assets/plugins/sticky-kit-master/dist/sticky-kit.min.js"></script>
+    <script src="../assets/plugins/sparkline/jquery.sparkline.min.js"></script>
+    <script src="../assets/plugins/sparkline/jquery.sparkline.min.js"></script>
+>>>>>>> 485076bdd2595a3e337447d534b84ade88b7383d
     <!--Custom JavaScript -->
     <script src="js/custom.min.js"></script>
     <!-- ============================================================== -->
     <!-- This page plugins -->
     <!-- ============================================================== -->
     <!-- chartist chart -->
+<<<<<<< HEAD
     <script src="assets/plugins/chartist-js/dist/chartist.min.js"></script>
     <script src="assets/plugins/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.min.js"></script>
     <!--c3 JavaScript -->
     <script src="assets/plugins/d3/d3.min.js"></script>
     <script src="assets/plugins/c3-master/c3.min.js"></script>
+=======
+    <script src="../assets/plugins/chartist-js/dist/chartist.min.js"></script>
+    <script src="../assets/plugins/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.min.js"></script>
+    <!--c3 JavaScript -->
+    <script src="../assets/plugins/d3/d3.min.js"></script>
+    <script src="../assets/plugins/c3-master/c3.min.js"></script>
+>>>>>>> 485076bdd2595a3e337447d534b84ade88b7383d
     <!-- Chart JS -->
     <script src="js/dashboard6.js"></script>
     <!-- ============================================================== -->
     <!-- Style switcher -->
     <!-- ============================================================== -->
+<<<<<<< HEAD
     <script src="assets/plugins/styleswitcher/jQuery.style.switcher.js"></script>
+=======
+    <script src="../assets/plugins/styleswitcher/jQuery.style.switcher.js"></script>
+>>>>>>> 485076bdd2595a3e337447d534b84ade88b7383d
 </body>
 
 </html>
