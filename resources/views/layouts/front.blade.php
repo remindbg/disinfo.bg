@@ -37,7 +37,8 @@
 <!-- ============================================================== -->
 <div class="preloader">
     <svg class="circular" viewBox="25 25 50 50">
-        <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" /> </svg>
+        <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
+    </svg>
 </div>
 <!-- ============================================================== -->
 <!-- Main wrapper - style you can find in pages.scss -->
@@ -57,17 +58,17 @@
                     <b>
                         <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
                         <!-- Dark Logo icon -->
-                        <img src="assets/images/logo-icon.png" alt="homepage" class="dark-logo" />
+                        <img src="assets/images/logo-icon.png" alt="homepage" class="dark-logo"/>
                         <!-- Light Logo icon -->
-                        <img src="assets/images/logo-light-icon.png" alt="homepage" class="light-logo" />
+                        <img src="assets/images/logo-light-icon.png" alt="homepage" class="light-logo"/>
                     </b>
                     <!--End Logo icon -->
                     <!-- Logo text -->
                     <span>
                             <!-- dark Logo text -->
-                            <img src="assets/images/logo-text.png" alt="homepage" class="dark-logo" />
+                            <img src="assets/images/logo-text.png" alt="homepage" class="dark-logo"/>
                         <!-- Light Logo text -->
-                            <img src="assets/images/logo-light-text.png" class="light-logo" alt="homepage" />
+                            <img src="assets/images/logo-light-text.png" class="light-logo" alt="homepage"/>
                         </span>
                 </a>
             </div>
@@ -81,7 +82,8 @@
                 <ul class="navbar-nav mr-auto mt-md-0">
                     <!-- This is  -->
                     <li class="nav-item">
-                        <a class="nav-link nav-toggler hidden-md-up text-muted waves-effect waves-dark" href="javascript:void(0)">
+                        <a class="nav-link nav-toggler hidden-md-up text-muted waves-effect waves-dark"
+                           href="javascript:void(0)">
                             <i class="mdi mdi-menu"></i>
                         </a>
                     </li>
@@ -118,7 +120,8 @@
                     <!-- Messages -->
                     <!-- ============================================================== -->
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" id="2" data-toggle="dropdown" aria-haspopup="true"
+                        <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" id="2"
+                           data-toggle="dropdown" aria-haspopup="true"
                            aria-expanded="false">
                             <i class="mdi mdi-email"></i>
                             <div class="notify">
@@ -200,9 +203,10 @@
                     <!-- Profile -->
                     <!-- ============================================================== -->
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true"
+                        <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href=""
+                           data-toggle="dropdown" aria-haspopup="true"
                            aria-expanded="false">
-                            <img src="assets/images/users/1.jpg" alt="user" class="profile-pic" />
+                            <img src="assets/images/users/1.jpg" alt="user" class="profile-pic"/>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right scale-up">
                             <ul class="dropdown-user">
@@ -248,7 +252,8 @@
                     <!-- Language -->
                     <!-- ============================================================== -->
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true"
+                        <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href=""
+                           data-toggle="dropdown" aria-haspopup="true"
                            aria-expanded="false">
                             <i class="flag-icon flag-icon-bg"></i>
                         </a>
@@ -273,140 +278,7 @@
     <!-- ============================================================== -->
     <!-- Left Sidebar - style you can find in sidebar.scss  -->
     <!-- ============================================================== -->
-    <aside class="left-sidebar">
-        <!-- Sidebar scroll-->
-        <div class="scroll-sidebar">
-            <!-- Sidebar navigation-->
-            <nav class="sidebar-nav">
-                <ul id="sidebarnav">
-                    <li>
-                        <a class="has-arrow " href="#" aria-expanded="false">
-                            <i class="mdi mdi-table"></i>
-                            <span class="hide-menu">Дезинфо</span>
-                        </a>
-                        <ul aria-expanded="false" class="collapse">
-                            <li>
-                                <a href="table-basic.html">Последни</a>
-                            </li>
-                            <li>
-                                <a href="table-layout.html">Актуални</a>
-                            </li>
-                            <li>
-                                <a href="table-data-table.html">По Етикети</a>
-                            </li>
-                            <li>
-                                <a href="table-footable.html">Предложи Новина</a>
-                            </li>
-
-                        </ul>
-                    </li>
-
-                    <li>
-                        <a class="has-arrow " href="/" aria-expanded="false">
-                            <i class="mdi mdi-bullseye"></i>
-                            <span class="hide-menu">Статии</span>
-                        </a>
-                        <ul aria-expanded="false" class="collapse">
-
-                            <li>
-                                <a class="has-arrow" href="#" aria-expanded="false">Сортиране</a>
-                                <ul aria-expanded="false" class="collapse">
-                                    <li>
-                                        <a href="app-email.html">Последните 7 дни</a>
-                                    </li>
-                                    <li>
-                                        <a href="app-email-detail.html">Последни 30 дни</a>
-                                    </li>
-                                    <li>
-                                        <a href="app-compose.html">Най-четени</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="app-chat.html">Категории</a>
-                            </li>
-                            <li>
-                                <a href="app-ticket.html">Отметки</a>
-                            </li>
-
-                        </ul>
-                    </li>
-
-                    <li class="nav-devider"></li>
-
-
-
-                    <li class="nav-devider"></li>
-                    <li class="nav-small-cap">EXTRA COMPONENTS</li>
-
-                    <li>
-                        <a class="has-arrow " href="#" aria-expanded="false">
-                            <i class="mdi mdi-widgets"></i>
-                            <span class="hide-menu">Списък Медии</span>
-                        </a>
-                        <ul aria-expanded="false" class="collapse">
-                            <li>
-                                <a class="has-arrow " href="#" aria-expanded="false">Най-компроментирани</a>
-                                <ul aria-expanded="false" class="collapse">
-                                    <li>
-                                        <a href="widget-apps.html small"> > Widget Apps * 432</a>
-                                    </li>
-                                    <li>
-                                        <a href="widget-data.html">Widget Data</a>
-                                    </li>
-                                    <li>
-                                        <a href="widget-charts.html">Widget Charts</a>
-                                    </li>
-                                    <li>
-                                        <a href="widget-charts.html">Вижте Всички</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="widget-charts.html">Последно Добавени</a>
-                            </li>
-                            <li>
-                                <a href="widget-charts.html">По етикети</a>
-                            </li>
-                            <li>
-                                <a href="widget-charts.html">Предложете Медия</a>
-                            </li>
-                        </ul>
-                    </li>
-
-                    <li>
-                        <a class="has-arrow " href="#" aria-expanded="false">
-                            <i class="mdi mdi-table"></i>
-                            <span class="hide-menu">Fact Checking</span>
-                        </a>
-                        <ul aria-expanded="false" class="collapse">
-                            <li>
-                                <a href="widget-apps.html small">Предложете Материал</a>
-                            </li>
-                            <li>
-                                <a href="widget-data.html">Категории</a>
-                            </li>
-                            <li>
-                                <a href="widget-charts.html">Вижте Всички</a>
-                            </li>
-
-                        </ul>
-                    </li>
-                    <li>
-                        <a class="has-arrow " href="#" aria-expanded="false">
-                            <i class="mdi mdi-table"></i>
-                            <span class="hide-menu">Регистрация</span>
-                        </a>
-
-                    </li>
-
-
-                </ul>
-            </nav>
-            <!-- End Sidebar navigation -->
-        </div>
-        <!-- End Sidebar scroll-->
-    </aside>
+   @include('_partials/header');
     <!-- ============================================================== -->
     <!-- End Left Sidebar - style you can find in sidebar.scss  -->
     <!-- ============================================================== -->
@@ -459,80 +331,80 @@
             <!-- ============================================================== -->
             <!-- Row -->
             <div class="row">
-                <div class="col-md-8 col-xlg-9">
-                    <!-- Row -->
 
-                    <!-- Row -->
-                    <!-- Row -->
-                    <div class="row">
-                        <!-- Column -->
-                        <div class="col-lg-12">
-
-                            <div class="ribbon-wrapper card">
-                                <div class="ribbon ribbon-bookmark  ribbon-warning">21.03.2017</div>
-                                <h5 class="font-weight-bold">ЗАГЛАВИЕ НА ПРИМЕРНА НОВИНА</h5>
-                                <p class="ribbon-content">Duis mollis, est non commodo luctus, nisi erat porttitor ligula</p>
-
-                            </div>
-                            <div class="ribbon-wrapper card">
-                                <div class="ribbon ribbon-bookmark  ribbon-warning">21.03.2017</div>
-
-                                <h5 class="font-weight-bold">Подготвя ли се НАТО за война с Русия в близките 2
-                                    години?</h5>
-                                <div class="row">
-                                    <div class="col-lg-2">
-                                        <img class="img-thumbnail" src="assets/images/users/1.jpg"
-                                             alt="user">
-                                    </div>
-                                    <div class="col-lg-9">
-                                        <p class="ribbon-content">Duis mollis, est non commodo luctus, nisi erat porttitor ligula</p>
-                                    </div>
-                                    <div class="col-lg-12">
-                                        Етикети:
-                                    </div>
-                                    <!-- /.col-lg-12 -->
-                                </div>
-                                <!-- /.row -->
-
-                                <!-- /.col-lg-4 -->
-
-
-                            </div>
-                            <div class="ribbon-wrapper card">
-                                <div class="ribbon ribbon-bookmark  ribbon-warning">21.03.2017</div>
-                                <h5 class="font-weight-bold">ЗАГЛАВИЕ НА ПРИМЕРНА НОВИНА</h5>
-                                <p class="ribbon-content">Duis mollis, est non commodo luctus, nisi erat porttitor ligula</p>
-
-                            </div>
-                            <div class="ribbon-wrapper card">
-                                <div class="ribbon ribbon-bookmark  ribbon-warning">21.03.2017</div>
-                                <h5 class="font-weight-bold">ЗАГЛАВИЕ НА ПРИМЕРНА НОВИНА</h5>
-                                <p class="ribbon-content">Duis mollis, est non commodo luctus, nisi erat porttitor ligula</p>
-
-                            </div>
-
-
-                        </div>
-
-
-                    </div>
+                <div class="col-md-8 col-xlg-8">
+                    @yield('content')
                 </div>
-                <div class="col-lg-3">
+                <div class="col-lg-4">
                     <div class="card">
                         <div class="card-body">
-                            <h5>Последни Коментари</h5>
-                            <hr>
-
+                            <h4 class="card-title">Recent Messages</h4>
+                            <div class="message-box">
+                                <div class="message-widget">
+                                    <!-- Message -->
+                                    <a href="#">
+                                        <div class="user-img"><img src="../assets/images/users/1.jpg" alt="user"
+                                                                   class="img-circle"> <span
+                                                    class="profile-status online pull-right"></span></div>
+                                        <div class="mail-contnet">
+                                            <h5>Pavan kumar</h5> <span class="mail-desc">Lorem Ipsum is simply dummy text of the printing and type setting industry. Lorem Ipsum has been.</span>
+                                            <span class="time">9:30 AM</span></div>
+                                    </a>
+                                    <!-- Message -->
+                                    <a href="#">
+                                        <div class="user-img"><img src="../assets/images/users/2.jpg" alt="user"
+                                                                   class="img-circle"> <span
+                                                    class="profile-status busy pull-right"></span></div>
+                                        <div class="mail-contnet">
+                                            <h5>Sonu Nigam</h5> <span
+                                                    class="mail-desc">I've sung a song! See you at</span> <span
+                                                    class="time">9:10 AM</span></div>
+                                    </a>
+                                    <!-- Message -->
+                                    <a href="#">
+                                        <div class="user-img"><span class="round">A</span> <span
+                                                    class="profile-status away pull-right"></span></div>
+                                        <div class="mail-contnet">
+                                            <h5>Arijit Sinh</h5> <span class="mail-desc">Simply dummy text of the printing and typesetting industry.</span>
+                                            <span class="time">9:08 AM</span></div>
+                                    </a>
+                                    <!-- Message -->
+                                    <a href="#">
+                                        <div class="user-img"><img src="../assets/images/users/4.jpg" alt="user"
+                                                                   class="img-circle"> <span
+                                                    class="profile-status offline pull-right"></span></div>
+                                        <div class="mail-contnet">
+                                            <h5>Pavan kumar</h5> <span class="mail-desc">Just see the my admin!</span>
+                                            <span class="time">9:02 AM</span></div>
+                                    </a>
+                                    <!-- Message -->
+                                    <a href="#">
+                                        <div class="user-img"><img src="../assets/images/users/1.jpg" alt="user"
+                                                                   class="img-circle"> <span
+                                                    class="profile-status online pull-right"></span></div>
+                                        <div class="mail-contnet">
+                                            <h5>Pavan kumar</h5> <span
+                                                    class="mail-desc">Welcome to the Elite Admin</span> <span
+                                                    class="time">9:30 AM</span></div>
+                                    </a>
+                                    <!-- Message -->
+                                    <a href="#">
+                                        <div class="user-img"><img src="../assets/images/users/2.jpg" alt="user"
+                                                                   class="img-circle"> <span
+                                                    class="profile-status busy pull-right"></span></div>
+                                        <div class="mail-contnet">
+                                            <h5>Sonu Nigam</h5> <span
+                                                    class="mail-desc">I've sung a song! See you at</span> <span
+                                                    class="time">9:10 AM</span></div>
+                                    </a>
+                                    <!-- Message -->
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <!-- Column -->
-
-
                 </div>
                 <!-- Column -->
-                <!-- Column -->
-
-
             </div>
         </div>
         <!-- Row -->
@@ -609,7 +481,7 @@
     <!-- ============================================================== -->
     <!-- footer -->
     <!-- ============================================================== -->
-    <footer class="footer"> © 2017 Material Pro Admin by wrappixel.com </footer>
+    <footer class="footer"> © 2017 Material Pro Admin by wrappixel.com</footer>
     <!-- ============================================================== -->
     <!-- End footer -->
     <!-- ============================================================== -->
