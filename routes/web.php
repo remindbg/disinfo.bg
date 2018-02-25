@@ -14,6 +14,9 @@
 Route::get('/', function () {
     return view('homepage');
 });
+Route::get('/administration', function () {
+    return view('layouts.adminlayout');
+});
 
 Auth::routes();
 
