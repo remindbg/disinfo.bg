@@ -17,8 +17,6 @@ class CreateUsersTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('email')->unique();
-            $table->string('city')->nullable();
-            $table->integer('age')->nullable();
             $table->boolean('isAdmin')->default(false);
             $table->boolean('isAuthor')->default(false);
             // todo images, etc

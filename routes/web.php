@@ -18,6 +18,9 @@ Route::get('/administration', function () {
     return view('layouts.adminlayout');
 });
 
+Route::get('/desinfo', function () {
+    return view('desinfo.all');
+});
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
