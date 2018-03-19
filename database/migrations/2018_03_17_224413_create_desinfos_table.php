@@ -18,12 +18,15 @@ class CreateDesinfosTable extends Migration
             $table->text('title');
             $table->text('summaryDesinfo');
             $table->text('disproof');
+            $table->text('originalUrl')->nullable();
+
             $table->text('language')->nullable();
             $table->integer('views')->default(1);
             $table->integer('likes')->default(0);
-            $table->text('originalCountry');
+            $table->text('originalCountry')->nullable();
             $table->boolean('isApproved')->default(false);
             $table->boolean('isCommentable')->default(true);
+            $table->boolean('isFeatured')->default(false);
             $table->timestamps();
         });
     }

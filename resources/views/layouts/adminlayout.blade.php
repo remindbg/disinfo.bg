@@ -1,34 +1,134 @@
-@include('admin._static.header')
+@include('_partials/topnav')
+<!-- End Topbar header -->
 
-        <!-- Start Page content -->
-        <div class="content">
-            <div class="container-fluid">
+@include('_partials/topmenu');
 
-                <div class="row">
-                    <div class="col-12">
-                        <div class="card-box">
-                            <h4 class="header-title mb-4">Статии  и Новини</h4>
+<!-- Page wrapper  -->
+<div class="page-wrapper">
 
-                            <div class="row">
-                                <div class="col-sm-6 col-lg-6 col-xl-3">
-                                    <div class="card-box mb-0 widget-chart-two">
-                                        <div class="float-right">
-
-                                        </div>
-
-                                    </div>
-                                </div>
-
-                            </div>
-                            <!-- end row -->
+    <!-- Container fluid  -->
+    <div class="container-fluid">
+        <!-- Bread crumb and right sidebar toggle -->
+        <div class="row page-titles">
+            <div class="col-md-5 col-8 align-self-center">
+                <h3 class="text-themecolor">Начало</h3>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="javascript:void(0)"></a>
+                    </li>
+                    <li class="breadcrumb-item active"></li>
+                </ol>
+            </div>
+            <div class="col-md-7 col-4 align-self-center">
+                <div class="d-flex m-t-10 justify-content-end">
+                    <div class="d-flex m-r-20 m-l-10 hidden-md-down">
+                        <div class="chart-text m-r-10">
+                            <h6 class="m-b-0">
+                                <small>Версия 1.0.1 *beta*</small>
+                            </h6>
                         </div>
+
+                    </div>
+
+                    <div class="">
+                        <button class="right-side-toggle waves-effect waves-light btn-success btn btn-circle btn-sm pull-right m-l-10">
+                            <i class="ti-settings text-white"></i>
+                        </button>
                     </div>
                 </div>
-                <!-- end row -->
+            </div>
 
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Bread crumb and right sidebar toggle -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Start Page Content -->
+        <!-- ============================================================== -->
+        <!-- Row -->
+        <div class="row">
 
-            </div> <!-- container -->
+            <div class="col-md-12 col-xlg-12">
+                @yield('content')
+            </div>
 
-        </div> <!-- content -->
+        <!-- Column -->
+        </div>
+    </div>
+    <!-- Row -->
+    <!-- ============================================================== -->
+    <!-- End PAge Content -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- Right sidebar -->
+    <!-- ============================================================== -->
+    <!-- .right-sidebar -->
+    <div class="right-sidebar">
+        <div class="slimscrollright">
+            <div class="rpanel-title"> Настройки
+                <span>
+                                <i class="ti-close right-side-toggle"></i>
+                            </span>
+            </div>
+            <div class="r-panel-body">
+                <ul id="themecolors" class="m-t-20">
+                    <li>
+                        <b>Светъл Хедър</b>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)" data-theme="default" class="default-theme">1</a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)" data-theme="green" class="green-theme">2</a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)" data-theme="red" class="red-theme">3</a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)" data-theme="blue" class="blue-theme working">4</a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)" data-theme="purple" class="purple-theme">5</a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)" data-theme="megna" class="megna-theme">6</a>
+                    </li>
+                    <li class="d-block m-t-30">
+                        <b>Тъмен Хедър</b>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)" data-theme="default-dark" class="default-dark-theme">7</a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)" data-theme="green-dark" class="green-dark-theme">8</a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)" data-theme="red-dark" class="red-dark-theme">9</a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)" data-theme="blue-dark" class="blue-dark-theme">10</a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)" data-theme="purple-dark" class="purple-dark-theme">11</a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)" data-theme="megna-dark" class="megna-dark-theme ">12</a>
+                    </li>
+                </ul>
 
-      @include('admin._static.footer')
+            </div>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Right sidebar -->
+    <!-- ============================================================== -->
+</div>
+<!-- ============================================================== -->
+<!-- End Container fluid  -->
+<!-- ============================================================== -->
+<!-- ============================================================== -->
+<!-- footer -->
+<!-- ============================================================== -->
+<footer class="footer"> © 2017 Material Pro Admin by wrappixel.com</footer>
+<!-- ============================================================== -->
+@include('_partials.adminfooter')

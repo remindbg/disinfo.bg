@@ -1,4 +1,37 @@
-<div class="col-lg-3">
+<div class="col-lg-4">
+
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Последни Случаи На Дезинформация</h4>
+                <div class="message-box">
+                    <div class="message-widget">
+                        <!-- Message -->
+                        <a href="#">
+                            <div class="user-img"> <img src="../assets/images/users/1.jpg" alt="user" class="img-circle"> <span class="profile-status online pull-right"></span> </div>
+                            <div class="mail-contnet">
+                                <h5>Русия</h5> <span class="mail-desc">България се изправя срещу Русия, а президента
+                                    Владимир Путин очаква да се
+                                    договори</span> <span class="time">14.03.2018</span> </div>
+                        </a>
+                        <a href="#">
+                            <div class="user-img"> <img src="../assets/images/users/1.jpg" alt="user" class="img-circle"> <span class="profile-status online pull-right"></span> </div>
+                            <div class="mail-contnet">
+                                <h5>България</h5> <span class="mail-desc">България се изправя срещу Русия, а президента
+                                    Владимир Путин очаква да се
+                                    договори</span> <span class="time">9:30 AM</span> </div>
+                        </a>
+                        <small><a href="/desinfo/">Всички</a></small>
+
+                        <!-- /.text-center -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
     <div class="card">
         <div class="card-body">
             <h4 class="card-title">Категории</h4>

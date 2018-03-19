@@ -18,6 +18,10 @@ Route::get('/administration', function () {
     return view('layouts.adminlayout');
 });
 
+Route::get('/articles', function () {
+    return view('articles.all');
+});
+
 Route::get('/desinfo', function () {
     return view('desinfo.all');
 });
@@ -30,3 +34,10 @@ Route::get('/articles/all','ArticleController@all')->name('allarticles');
 Route::get('/articles/{category}/{date}/{slug}',
 	'ArticleController@single')->name('singleAricle');
 
+/**
+ * Admin Routes TODO : grouping namespace
+ */
+Route::get('/administration/desinfo/all', 'Admin\DesinfoController@all')->name('adminAllDesinfo');
+Route::get('/administration/desinfo/new', 'Admin\DesinfoController@create')->name('createDesinfo');
+
+Route::post('/administration/desinfo/store', 'Admin\DesinfoController@store')->name('storeDesinfo');
