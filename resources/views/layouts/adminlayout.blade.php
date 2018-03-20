@@ -1,7 +1,7 @@
 @include('_partials/topnav')
 <!-- End Topbar header -->
 
-@include('_partials/topmenu');
+@include('_partials/admintopmenu');
 
 <!-- Page wrapper  -->
 <div class="page-wrapper">

@@ -19,6 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->boolean('isAdmin')->default(false);
             $table->boolean('isAuthor')->default(false);
+            $table->boolean('role');
             // todo images, etc
             $table->string('password');
             $table->rememberToken();
