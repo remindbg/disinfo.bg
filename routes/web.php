@@ -33,7 +33,15 @@ Route::get('/articles/{category}/{date}/{slug}',
 /**
  * Admin Routes TODO : grouping namespace
  */
+Route::get('/administration/articles/create', 'Admin\ArticleController@create')->name('adminCreateArticle');
+
 Route::get('/administration/desinfo/all', 'Admin\DesinfoController@all')->name('adminAllDesinfo');
 Route::get('/administration/desinfo/new', 'Admin\DesinfoController@create')->name('createDesinfo');
 
 Route::post('/administration/desinfo/store', 'Admin\DesinfoController@store')->name('storeDesinfo');
+
+
+// categories
+
+Route::get('/administration/categories/create', 'Admin\CategoryController@create')->name('adminCategoryCreate');
+Route::post('/administration/categories/create', 'Admin\CategoryController@store')->name('adminCategoryStore');

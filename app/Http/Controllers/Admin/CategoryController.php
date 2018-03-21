@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Article;
 use App\Category;
-class ArticleController extends Controller
+class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +15,9 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        $all = Article::paginate(8);
+        $all = Category::paginate(8);
 
-        return view('admin.articles.all',$all);
+        return view('admin.categories.all',$all);
 
     }
 
@@ -28,8 +28,7 @@ class ArticleController extends Controller
      */
     public function create()
     {
-        $categories = Category::all();
-        return view('admin.articles.create',['categories' =>$categories]);
+        return view('admin.categories.create');
     }
 
     /**
@@ -40,14 +39,18 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
-        $article = new Article();
+        $category = new Category();
 
         $data = $this->validate($request, [
-            'title'=>'required',
-            'summaryDesinfo'=> 'required',
-            'disproof' => 'required'
+            'name'=>'required',
+            'slug'=> 'required',
+
         ]);
+        $category->saveCategory($data);
+        return redirect('/administration/category/all')->with('успешно', 'New desinfo has been created! Wait sometime to get resolved');
     }
+
+
 
     /**
      * Display the specified resource.

@@ -20,13 +20,14 @@
         @endif
         <div class="row">
             <div class="col-lg-12">
-                <form class="form-horizontal" role="form" method="POST" action="{{url('/administration/articles/store')
+                <form class="form-horizontal" role="form" method="POST" action="{{url
+                ('/administration/categories/create')
                 }}">
                     <input type="hidden" value="{{csrf_token()}}" name="_token" />
                     <div class="form-group row">
                         <label class="col-2 col-form-label">Заглавие</label>
                         <div class="col-10">
-                            <input type="text" class="form-control" value="" name="title">
+                            <input type="text" class="form-control" value="" name="name">
                         </div>
                     </div>
                     <div class="form-group row">
@@ -35,23 +36,8 @@
                             <input type="text" class="form-control" value="" name="slug">
                         </div>
                     </div>
-                    <div class="form-group row">
-                        <label class="col-2 col-form-label">Категория</label>
-                        <div class="col-10">
-                            <select class="selectpicker" data-style="form-control btn-secondary">
-                                @foreach($categories as $category)
-                                    <option>{{$category->name}}</option>
 
-                                @endforeach
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label class="col-2 col-form-label">Текст</label>
-                        <div class="col-10">
-                            <textarea class="form-control" rows="5" name="body"></textarea>
-                        </div>
-                    </div>
+
                     <button type="submit" class="btn btn-primary">Добави</button>
 
 
