@@ -18,19 +18,15 @@ Route::get('/administration', function () {
     return view('layouts.adminlayout');
 });
 
-Route::get('/articles', function () {
-    return view('articles.all');
-});
 
-Route::get('/desinfo', function () {
-    return view('desinfo.all');
-});
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
 
-Route::get('/articles/all','ArticleController@all')->name('allarticles');
+Route::get('/articles','ArticleController@index')->name('allarticles');
 Route::get('/articles/{category}/{date}/{slug}',
 	'ArticleController@single')->name('singleAricle');
 

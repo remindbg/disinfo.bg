@@ -1,6 +1,4 @@
 @extends('layouts.adminlayout')
-
-
 @section('content')
 
     <!-- Start Page content -->
@@ -21,14 +19,14 @@
             </div><br />
         @endif
         <div class="row">
-            <div class="col-lg-10">
+            <div class="col-lg-12">
                 <form class="form-horizontal" role="form" method="POST" action="{{url('/administration/desinfo/store')
                 }}">
                     <input type="hidden" value="{{csrf_token()}}" name="_token" />
                     <div class="form-group row">
                         <label class="col-2 col-form-label">Заглавие</label>
                         <div class="col-10">
-                            <input type="text" class="form-control" value="Заглавие..." name="title">
+                            <input type="text" class="form-control" value="" name="title">
                         </div>
                     </div>
 
@@ -36,6 +34,7 @@
                         <label class="col-2 col-form-label">Summary Of Desinfo</label>
                         <div class="col-10">
                             <textarea class="form-control" rows="5" name="summaryDesinfo"></textarea>
+
                         </div>
                     </div>
                     <div class="form-group row">
@@ -48,7 +47,7 @@
                     <div class="form-group row">
                         <label class="col-2 col-form-label">Оригинален Източник ( not required)</label>
                         <div class="col-10">
-                            <input type="text" class="form-control" value="Адрес ( url ) .." name="originalurl">
+                            <input type="text" class="form-control" value="" name="originalurl">
                         </div>
                     </div>
                     <div class="form-group row">
@@ -84,7 +83,7 @@
                             </select>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-primary">Create</button>
+                    <button type="submit" class="btn btn-primary">Добави</button>
 
 
 
@@ -95,7 +94,26 @@
         <!-- end row -->
     </div>
 
+@endsection
 
+@section('scripts')
+    <script>
+        $(document).ready(function() {
 
+            if ($("textarea").length > 0) {
+                tinymce.init({
+                    selector: "textarea",
+                    theme: "modern",
+                    height: 300,
+                    plugins: [
+                        "advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker",
+                        "searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",
+                        "save table contextmenu directionality emoticons template paste textcolor"
+                    ],
+                    toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | l      ink image | print preview media fullpage | forecolor backcolor emoticons",
 
+                });
+            }
+        });
+    </script>
 @endsection

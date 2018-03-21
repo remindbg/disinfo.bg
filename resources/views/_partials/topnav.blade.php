@@ -23,6 +23,7 @@
     <!--This page css - Morris CSS -->
     <link href="    {{ URL::asset('assets/plugins/c3-master/c3.min.css') }}
             " rel="stylesheet">
+    <script src="{{URL::asset('assets/plugins/tinymce/tinymce.min.js')}}"></script>
     <!-- Custom CSS -->
     <link href="{{ URL::asset('css/style.css') }}" rel="stylesheet">
     <!-- You can change the theme colors from here -->
@@ -100,12 +101,20 @@
                             <i class="ti-search"></i>
                         </a>
                         <form class="app-search">
-                            <input type="text" class="form-control" placeholder="Search & enter">
+                            <input type="text" class="form-control" placeholder="Търсене В Сайта">
                             <a class="srh-btn">
                                 <i class="ti-close"></i>
                             </a>
                         </form>
+
                     </li>
+                    <li class="nav-item hidden-sm-down">
+                        <a class="nav-link hidden-sm-down text-muted waves-effect waves-dark" href="
+{{url::to('/')}}">
+                            <i class="ti-home"></i>
+                        </a>
+                    </li>
+
                     <!-- ============================================================== -->
                     <!-- Messages -->
                     <!-- ============================================================== -->
@@ -128,7 +137,7 @@
                         <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" id="2"
                            data-toggle="dropdown" aria-haspopup="true"
                            aria-expanded="false">
-                            <i class="mdi mdi-email"></i>
+                            <i class="mdi mdi-message"></i>
                             <div class="notify">
                                 <span class="heartbit"></span>
                                 <span class="point"></span>
@@ -137,66 +146,26 @@
                         <div class="dropdown-menu mailbox dropdown-menu-right scale-up" aria-labelledby="2">
                             <ul>
                                 <li>
-                                    <div class="drop-title">Съобщения</div>
+                                    <div class="drop-title">Статии И Новини</div>
                                 </li>
                                 <li>
                                     <div class="message-center">
                                         <!-- Message -->
-                                        <a href="#">
-                                            <div class="user-img">
-                                                <img src="assets/images/users/1.jpg" alt="user" class="img-circle">
-                                                <span class="profile-status online pull-right"></span>
-                                            </div>
+                                        <a href="">
+                                            <div class="user-img"> <img src="../assets/images/users/1.jpg" alt="user"
+                                                                        class="img-circle"> <span class="profile-status busy pull-right"></span> </div>
                                             <div class="mail-contnet">
-                                                <h5>Administrator</h5>
-                                                <span class="mail-desc">Just see the my admin!</span>
-                                                <span class="time">9:30 AM</span>
-                                            </div>
+                                                <h6>Русия Напада Китай заради петрола</h6> <span class="mail-desc">Just
+                                                    see the my
+                                                        admin!</span> <span class="time">9:30 AM</span> </div>
                                         </a>
-                                        <!-- Message -->
-                                        <a href="#">
-                                            <div class="user-img">
-                                                <img src="assets/images/users/2.jpg" alt="user"
-                                                     class="img-circle">
-                                                <span class="profile-status busy pull-right"></span>
-                                            </div>
-                                            <div class="mail-contnet">
-                                                <h5>Sonu Nigam</h5>
-                                                <span class="mail-desc">I've sung a song! See you at</span>
-                                                <span class="time">9:10 AM</span>
-                                            </div>
-                                        </a>
-                                        <!-- Message -->
-                                        <a href="#">
-                                            <div class="user-img">
-                                                <img src="assets/images/users/3.jpg" alt="user" class="img-circle">
-                                                <span class="profile-status away pull-right"></span>
-                                            </div>
-                                            <div class="mail-contnet">
-                                                <h5>Arijit Sinh</h5>
-                                                <span class="mail-desc">I am a singer!</span>
-                                                <span class="time">9:08 AM</span>
-                                            </div>
-                                        </a>
-                                        <!-- Message -->
-                                        <a href="#">
-                                            <div class="user-img">
-                                                <img src="assets/images/users/4.jpg" alt="user" class="img-circle">
-                                                <span class="profile-status offline pull-right"></span>
-                                            </div>
-                                            <div class="mail-contnet">
-                                                <h5>Pavan kumar</h5>
-                                                <span class="mail-desc">Just see the my admin!</span>
-                                                <span class="time">9:02 AM</span>
-                                            </div>
-                                        </a>
+
+
                                     </div>
                                 </li>
                                 <li>
                                     <a class="nav-link text-center" href="javascript:void(0);">
-                                        <strong>Вижте всички съобщения</strong>
-                                        <i class="fa fa-angle-right"></i>
-                                    </a>
+                                        <strong>Вижте Още</strong> <i class="fa fa-angle-right"></i> </a>
                                 </li>
                             </ul>
                         </div>
@@ -221,20 +190,20 @@
                                             <img src="assets/images/users/1.jpg" alt="user">
                                         </div>
                                         <div class="u-text">
-                                            <h4>Steave Jobs</h4>
-                                            <p class="text-muted">varun@gmail.com</p>
-                                            <a href="profile.html" class="btn btn-rounded btn-danger btn-sm">Профил</a>
+
+                                            <p class="text-muted">Coming Soon</p>
+                                            <a href="#" class="btn btn-rounded btn-danger btn-sm disabled">Профил</a>
                                         </div>
                                     </div>
                                 </li>
                                 <li role="separator" class="divider"></li>
                                 <li>
                                     <a href="#">
-                                        <i class="ti-user"></i>Моят Профил</a>
+                                        <i class="ti-user"></i> Моят Профил</a>
                                 </li>
                                 <li>
                                     <a href="#">
-                                        <i class="ti-wallet"></i>Моето съдържание</a>
+                                        <i class="ti-wallet"></i> Моето съдържание</a>
                                 </li>
                                 <li>
                                     <a href="#">
@@ -243,7 +212,7 @@
                                 <li role="separator" class="divider"></li>
                                 <li>
                                     <a href="#">
-                                        <i class="ti-settings"></i>Настройки</a>
+                                        <i class="ti-settings"></i> Настройки</a>
                                 </li>
                                 <li role="separator" class="divider"></li>
                                 <li>
