@@ -3,7 +3,7 @@
 
     <!-- Start Page content -->
     <div class="card-box">
-        <h4 class="header-title mb-4">Добавяне на Нов Случай на Дезинформация</h4>
+        <h4 class="header-title mb-4">Категории</h4>
         @if(\Session::has('success'))
             <div class="alert alert-success">
                 {{\Session::get('success')}}
@@ -20,7 +20,7 @@
         @endif
         <div class="row">
             <div class="col-lg-12">
-                <form class="form-horizontal" role="form" method="POST" action="{{url('/administration/articles/store')
+                <form class="form-horizontal" role="form" method="POST" action="{{url('/admin/articles/store')
                 }}">
                     <input type="hidden" value="{{csrf_token()}}" name="_token" />
                     <div class="form-group row">
@@ -33,6 +33,12 @@
                         <label class="col-2 col-form-label">Slug ( url ) </label>
                         <div class="col-10">
                             <input type="text" class="form-control" value="" name="slug">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-2 col-form-label">URL</label>
+                        <div class="col-10">
+                            <input type="text" class="form-control" value="" name="imageurl">
                         </div>
                     </div>
                     <div class="form-group row">
@@ -53,10 +59,6 @@
                         </div>
                     </div>
                     <button type="submit" class="btn btn-primary">Добави</button>
-
-
-
-
                 </form>
             </div>
         </div>

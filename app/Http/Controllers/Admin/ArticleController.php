@@ -15,9 +15,10 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        $all = Article::paginate(8);
+        $articles = Article::all();
+       // dd($articles);
 
-        return view('admin.articles.all',$all);
+        return view('admin.articles.all',['articles' => $articles]);
 
     }
 
@@ -44,9 +45,13 @@ class ArticleController extends Controller
 
         $data = $this->validate($request, [
             'title'=>'required',
-            'summaryDesinfo'=> 'required',
-            'disproof' => 'required'
+            'imageurl' => 'required',
+            'slug'=> 'required',
+            'body' => 'required'
         ]);
+        $article->saveArticle($data);
+        return redirect('/admin/articles/all')
+            ->with('успешно');
     }
 
     /**

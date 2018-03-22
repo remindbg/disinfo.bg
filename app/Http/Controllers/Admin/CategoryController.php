@@ -47,7 +47,7 @@ class CategoryController extends Controller
 
         ]);
         $category->saveCategory($data);
-        return redirect('/administration/category/all')->with('успешно', 'New desinfo has been created! Wait sometime to get resolved');
+        return redirect('/admin/articles/category/all')->with('успешно', 'New desinfo has been created! Wait sometime to get resolved');
     }
 
 

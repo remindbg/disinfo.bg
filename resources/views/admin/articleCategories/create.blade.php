@@ -21,7 +21,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <form class="form-horizontal" role="form" method="POST" action="{{url
-                ('/administration/categories/create')
+                ('/admin/articles/categories/create')
                 }}">
                     <input type="hidden" value="{{csrf_token()}}" name="_token" />
                     <div class="form-group row">
@@ -36,12 +36,7 @@
                             <input type="text" class="form-control" value="" name="slug">
                         </div>
                     </div>
-
-
                     <button type="submit" class="btn btn-primary">Добави</button>
-
-
-
 
                 </form>
             </div>

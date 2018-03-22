@@ -11,10 +11,19 @@
                     </a>
                     <ul aria-expanded="false" class="collapse">
                         <li>
-                            <a href="table-basic.html">Всички</a>
+                            <a href="/admin/desinfo/all">Всички</a>
                         </li>
                         <li>
-                            <a href="table-layout.html">Добави</a>
+                            <a href="/admin/desinfo/create">Добави</a>
+                        </li>
+                        <li>
+                            <a href="/admin/desinfo/tags/all">Етикети</a>
+                        </li>
+                        <li>
+                            <a href="/admin/desinfo/affectedCountries/all">Афектирани Страни</a>
+                        </li>
+                        <li>
+                            <a href="/admin/desinfo/categories/all">Категории</a>
                         </li>
                     </ul>
                 </li>
@@ -26,21 +35,21 @@
                     </a>
                     <ul aria-expanded="false" class="collapse">
 
-
                         <li>
-                            <a href="app-chat.html">Добавяне</a>
+                            <a href="/admin/articles/categories/all">Категории</a>
                         </li>
                         <li>
-                            <a href="app-ticket.html">Всички</a>
+                            <a href="/admin/articles/create">Добавяне</a>
+                        </li>
+                        <li>
+                            <a href="/admin/articles/all">Всички</a>
+                        </li>
+                        <li>
+                            <a href="/admin/articles/tags">Етикети</a>
                         </li>
 
                     </ul>
                 </li>
-
-
-
-
-
                 <li>
                     <a class="has-arrow " href="#" aria-expanded="false">
                         <i class="mdi mdi-widgets"></i>

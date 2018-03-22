@@ -14,7 +14,7 @@
 Route::get('/', function () {
     return view('homepage');
 });
-Route::get('/administration', function () {
+Route::get('/admin', function () {
     return view('layouts.adminlayout');
 });
 
@@ -33,15 +33,22 @@ Route::get('/articles/{category}/{date}/{slug}',
 /**
  * Admin Routes TODO : grouping namespace
  */
-Route::get('/administration/articles/create', 'Admin\ArticleController@create')->name('adminCreateArticle');
 
-Route::get('/administration/desinfo/all', 'Admin\DesinfoController@all')->name('adminAllDesinfo');
-Route::get('/administration/desinfo/new', 'Admin\DesinfoController@create')->name('createDesinfo');
+Route::get('/admin/desinfo/all', 'Admin\DesinfoController@all')->name('adminAllDesinfo');
+Route::get('/admin/desinfo/new', 'Admin\DesinfoController@create')->name('createDesinfo');
 
-Route::post('/administration/desinfo/store', 'Admin\DesinfoController@store')->name('storeDesinfo');
+Route::post('/admin/desinfo/store', 'Admin\DesinfoController@store')->name('storeDesinfo');
 
 
-// categories
+/**
+ * Articles Routes
+ */
+Route::get('/admin/articles/categories/create', 'Admin\CategoryController@create')->name('adminCategoryCreate');
+Route::post('/admin/articles/categories/create', 'Admin\CategoryController@store')->name('adminCategoryStore');
+Route::get('/admin/articles/create', 'Admin\ArticleController@create')->name('adminCreateArticle');
+Route::post('/admin/articles/store', 'Admin\ArticleController@store')->name('adminStoreArticle');
 
-Route::get('/administration/categories/create', 'Admin\CategoryController@create')->name('adminCategoryCreate');
-Route::post('/administration/categories/create', 'Admin\CategoryController@store')->name('adminCategoryStore');
+Route::get('/admin/articles/all', 'Admin\ArticleController@index')->name('allAdminArticles');
+Route::get('/admin/articles/edit/{id}', 'Admin\ArticleController@edit')->name('adminCreateEdit');
+Route::post('/admin/articles/edit/{id}', 'Admin\ArticleController@update')->name('adminCreateUpdate');
+Route::post('/admin/articles/delete/{id}', 'Admin\ArticleController@destroy')->name('adminArticlesDestroy');
