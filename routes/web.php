@@ -10,7 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Auth::routes();
 Route::get('/', function () {
     return view('homepage');
 });
@@ -20,15 +20,12 @@ Route::get('/admin', function () {
 
 
 
-
-Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');
 
 
 Route::get('/articles','ArticleController@index')->name('allarticles');
-Route::get('/articles/{category}/{date}/{slug}',
-	'ArticleController@single')->name('singleAricle');
+Route::get('/articles/{id}',
+	'ArticleController@show')->name('singleAricle');
 
 /**
  * Admin Routes TODO : grouping namespace

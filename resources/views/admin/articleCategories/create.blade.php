@@ -46,8 +46,8 @@
 
 @endsection
 
-@section('scripts')
-    <script>
+        @section('scripts')
+        <script>
         $(document).ready(function() {
 
             if ($("textarea").length > 0) {

@@ -12,12 +12,6 @@
             <div class="row page-titles">
                 <div class="col-md-5 col-8 align-self-center">
                     <h3 class="text-themecolor">@yield('title')</h3>
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item">
-                            <a href="javascript:void(0)"></a>
-                        </li>
-                        <li class="breadcrumb-item active"></li>
-                    </ol>
                 </div>
                 <div class="col-md-7 col-4 align-self-center">
                     <div class="d-flex m-t-10 justify-content-end">
@@ -27,9 +21,7 @@
                                     <small>Версия 1.0.1  *beta* update:  01.04.2018</small>
                                 </h6>
                             </div>
-
                         </div>
-
                         <div class="">
                             <button class="right-side-toggle waves-effect waves-light btn-success btn btn-circle btn-sm pull-right m-l-10">
                                 <i class="ti-settings text-white"></i>
@@ -39,17 +31,12 @@
                 </div>
 
             </div>
-            <!-- ============================================================== -->
-            <!-- End Bread crumb and right sidebar toggle -->
-            <!-- ============================================================== -->
-            <!-- ============================================================== -->
             <!-- Start Page Content -->
-            <!-- ============================================================== -->
-            <!-- Row -->
             <div class="row">
                     @yield('content')
+                @include('_partials.defSidebar')
             </div>
-               @include('_partials.defSidebar')
+
 
         </div>
 

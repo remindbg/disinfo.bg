@@ -3,7 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-
+use Category;
 class Article extends Model
 {
 
@@ -17,8 +17,8 @@ class Article extends Model
         $this->imageurl = $data['imageurl'];
         $this->body = $data['body'];
         $this->category_id = 1;
-        $this->save();
 
-        return 1;
+        $this->save();
+        return;
     }
 }
