@@ -17,15 +17,15 @@ Route::get('/', function () {
 Route::get('/admin', function () {
     return view('layouts.adminlayout');
 });
+ // Route::get('/home', 'HomeController@index')->name('home');
 
-
-
-Route::get('/home', 'HomeController@index')->name('home');
-
+/**
+ * Front / Article / Categories Routes
+ */
 
 Route::get('/articles','ArticleController@index')->name('allarticles');
-Route::get('/articles/{id}',
-	'ArticleController@show')->name('singleAricle');
+Route::get('/articles/{category}/{id}/{slug}',
+	'ArticleController@show')->name('singleArticle');
 
 /**
  * Admin Routes TODO : grouping namespace
@@ -44,6 +44,7 @@ Route::get('/admin/articles/categories/create', 'Admin\CategoryController@create
 Route::post('/admin/articles/categories/create', 'Admin\CategoryController@store')->name('adminCategoryStore');
 Route::get('/admin/articles/create', 'Admin\ArticleController@create')->name('adminCreateArticle');
 Route::post('/admin/articles/store', 'Admin\ArticleController@store')->name('adminStoreArticle');
+Route::get('/admin/articles/categories/all', 'Admin\CategoryController@index')->name('adminCategoryStore');
 
 Route::get('/admin/articles/all', 'Admin\ArticleController@index')->name('allAdminArticles');
 Route::get('/admin/articles/edit/{id}', 'Admin\ArticleController@edit')->name('adminCreateEdit');

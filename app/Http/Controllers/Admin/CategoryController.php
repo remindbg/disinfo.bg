@@ -15,9 +15,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $all = Category::paginate(8);
-
-        return view('admin.categories.all',$all);
+        $categories = Category::with('articles')->get();
+        return view('admin.articleCategories.all',compact('categories'));
 
     }
 
@@ -28,7 +27,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('admin.categories.create');
+        return view('admin.articleCategories.create');
     }
 
     /**
@@ -47,7 +46,7 @@ class CategoryController extends Controller
 
         ]);
         $category->saveCategory($data);
-        return redirect('/admin/articles/category/all')->with('успешно', 'New desinfo has been created! Wait sometime to get resolved');
+        return redirect('/admin/articles/categories/all')->with('success', 'New desinfo has been created! Wait sometime to get resolved');
     }
 
 

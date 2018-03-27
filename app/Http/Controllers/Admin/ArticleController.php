@@ -47,11 +47,12 @@ class ArticleController extends Controller
             'title'=>'required',
             'imageurl' => 'required',
             'slug'=> 'required',
-            'body' => 'required'
+            'body' => 'required',
+            'category_id' => 'required'
         ]);
         $article->saveArticle($data);
         return redirect('/admin/articles/all')
-            ->with('успешно');
+            ->with('success','Успешно');
     }
 
     /**

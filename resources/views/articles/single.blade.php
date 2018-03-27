@@ -42,7 +42,7 @@
                 <div class="col-lg-10">
                     <hr>
                     <p class="ribbon-content">
-                        {!!$article->body!!}
+                            wadfaswdfgadsfgadsfgafga
                     </p>
                     <hr>
                 </div>

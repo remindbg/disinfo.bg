@@ -3,7 +3,7 @@
 
     <!-- Start Page content -->
     <div class="card-box">
-        <h4 class="header-title mb-4">Добавяне на Нов Случай на Дезинформация</h4>
+        <h4 class="header-title mb-4">Нова Категория</h4>
         @if(\Session::has('success'))
             <div class="alert alert-success">
                 {{\Session::get('success')}}

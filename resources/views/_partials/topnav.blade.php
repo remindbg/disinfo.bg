@@ -6,11 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    @yield('meta')
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon.png">
-    <title>Material Pro Admin Template - The Most Complete & Trusted Bootstrap 4 Admin Template</title>
+
     <!-- Bootstrap Core CSS -->
     <link href="{{ URL::asset('assets/plugins/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
     <!-- chartist CSS -->
@@ -62,19 +61,14 @@
                 <a class="navbar-brand" href="index.html">
                     <!-- Logo icon -->
                     <b>
-                        <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
-                        <!-- Dark Logo icon -->
-                        <img src="assets/images/logo-icon.png" alt="homepage" class="dark-logo"/>
-                        <!-- Light Logo icon -->
-                        <img src="assets/images/logo-light-icon.png" alt="homepage" class="light-logo"/>
+                       <i class="wi wi-sunset"></i>
+
+
                     </b>
                     <!--End Logo icon -->
                     <!-- Logo text -->
                     <span>
-                            <!-- dark Logo text -->
-                            <img src="assets/images/logo-text.png" alt="homepage" class="dark-logo"/>
-                        <!-- Light Logo text -->
-                            <img src="assets/images/logo-light-text.png" class="light-logo" alt="homepage"/>
+
                         </span>
                 </a>
             </div>
@@ -82,9 +76,7 @@
             <!-- End Logo -->
             <!-- ============================================================== -->
             <div class="navbar-collapse">
-                <!-- ============================================================== -->
-                <!-- toggle and nav items -->
-                <!-- ============================================================== -->
+
                 <ul class="navbar-nav mr-auto mt-md-0">
                     <!-- This is  -->
                     <li class="nav-item">
@@ -106,7 +98,6 @@
                                 <i class="ti-close"></i>
                             </a>
                         </form>
-
                     </li>
                     <li class="nav-item hidden-sm-down">
                         <a class="nav-link hidden-sm-down text-muted waves-effect waves-dark" href="
@@ -114,25 +105,8 @@
                             <i class="ti-home"></i>
                         </a>
                     </li>
-
-                    <!-- ============================================================== -->
-                    <!-- Messages -->
-                    <!-- ============================================================== -->
-
-                    <!-- ============================================================== -->
-                    <!-- End Messages -->
-                    <!-- ============================================================== -->
                 </ul>
-                <!-- ============================================================== -->
-                <!-- User profile and search -->
-                <!-- ============================================================== -->
                 <ul class="navbar-nav my-lg-0">
-                    <!-- ============================================================== -->
-                    <!-- Comment -->
-                    <!-- ============================================================== -->
-
-                    <!-- Messages -->
-                    <!-- ============================================================== -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" id="2"
                            data-toggle="dropdown" aria-haspopup="true"

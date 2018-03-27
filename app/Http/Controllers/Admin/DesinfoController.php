@@ -27,7 +27,6 @@ class DesinfoController extends Controller
     public function store(Request $request)
     {
         $desinfo = new Desinfo();
-
         $data = $this->validate($request, [
             'title'=>'required',
             'summaryDesinfo'=> 'required',

@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Category;
+use Carbon\Carbon;
 class Article extends Model
 {
 
@@ -16,9 +17,12 @@ class Article extends Model
         $this->slug = $data['slug'];
         $this->imageurl = $data['imageurl'];
         $this->body = $data['body'];
-        $this->category_id = 1;
-
+        $this->category_id = $data['category_id'];
         $this->save();
-        return;
+
+    }
+    public function getCreatedAtAttribute($date)
+    {
+        return Carbon::createFromFormat('Y-m-d H:i:s', $date)->format('d-m-Y');
     }
 }

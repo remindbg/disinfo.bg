@@ -44,9 +44,9 @@
                     <div class="form-group row">
                         <label class="col-2 col-form-label">Категория</label>
                         <div class="col-10">
-                            <select class="selectpicker" data-style="form-control btn-secondary">
+                            <select class="selectpicker" name="category_id" data-style="form-control btn-secondary">
                                 @foreach($categories as $category)
-                                    <option>{{$category->name}}</option>
+                                    <option value="{{$category->id}}">{{$category->name}}</option>
 
                                 @endforeach
                             </select>
