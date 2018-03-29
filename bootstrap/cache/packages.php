@@ -1,4 +1,15 @@
 <?php return array (
+  'barryvdh/laravel-debugbar' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Barryvdh\\Debugbar\\ServiceProvider',
+    ),
+    'aliases' => 
+    array (
+      'Debugbar' => 'Barryvdh\\Debugbar\\Facade',
+    ),
+  ),
   'fideloper/proxy' => 
   array (
     'providers' => 
@@ -13,15 +24,18 @@
       0 => 'Laravel\\Tinker\\TinkerServiceProvider',
     ),
   ),
-  'barryvdh/laravel-debugbar' => 
+  'spatie/laravel-tags' => 
   array (
     'providers' => 
     array (
-      0 => 'Barryvdh\\Debugbar\\ServiceProvider',
+      0 => 'Spatie\\Tags\\TagsServiceProvider',
     ),
-    'aliases' => 
+  ),
+  'spatie/laravel-translatable' => 
+  array (
+    'providers' => 
     array (
-      'Debugbar' => 'Barryvdh\\Debugbar\\Facade',
+      0 => 'Spatie\\Translatable\\TranslatableServiceProvider',
     ),
   ),
 );

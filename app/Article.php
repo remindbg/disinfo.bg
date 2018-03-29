@@ -18,12 +18,15 @@ class Article extends Model
         $this->imageurl = $data['imageurl'];
         $this->body = $data['body'];
         $this->category_id = $data['category_id'];
-        $this->save();
+        $this->tags = $data['tags'];
+        dd($this->tags);
+       // $this->save();
+
 
     }
-    public function tags() {
-        return $this->belongsToMany('App\Tag');
-    }
+
+
+
     public function getCreatedAtAttribute($date)
     {
         return Carbon::createFromFormat('Y-m-d H:i:s', $date)->format('d-m-Y');

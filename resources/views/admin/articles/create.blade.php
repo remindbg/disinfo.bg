@@ -42,6 +42,12 @@
                         </div>
                     </div>
                     <div class="form-group row">
+                        <label class="col-2 col-form-label">Етикети</label>
+                        <div class="col-10">
+                            <input type="text" class="form-control" value="" name="tags">
+                        </div>
+                    </div>
+                    <div class="form-group row">
                         <label class="col-2 col-form-label">Категория</label>
                         <div class="col-10">
                             <select class="selectpicker" name="category_id" data-style="form-control btn-secondary">
@@ -68,6 +74,7 @@
 @endsection
 
 @section('scripts')
+
     <script>
         $(document).ready(function() {
 
@@ -87,4 +94,5 @@
             }
         });
     </script>
+
 @endsection

@@ -48,7 +48,8 @@ class ArticleController extends Controller
             'imageurl' => 'required',
             'slug'=> 'required',
             'body' => 'required',
-            'category_id' => 'required'
+            'category_id' => 'required',
+
         ]);
         $article->saveArticle($data);
         return redirect('/admin/articles/all')

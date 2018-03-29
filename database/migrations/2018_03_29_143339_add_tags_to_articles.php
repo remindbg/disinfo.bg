@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateArticleTags extends Migration
+class AddTagsToArticles extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,8 @@ class CreateArticleTags extends Migration
      */
     public function up()
     {
-        Schema::create('tags', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('name');
-            $table->timestamps();
+        Schema::table('articles', function (Blueprint $table) {
+            $table->string('tags')->nullable();
         });
     }
 
@@ -27,7 +25,7 @@ class CreateArticleTags extends Migration
      */
     public function down()
     {
-        Schema::table('tags', function (Blueprint $table) {
+        Schema::table('articles', function (Blueprint $table) {
             //
         });
     }
