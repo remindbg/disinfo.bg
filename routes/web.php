@@ -27,6 +27,10 @@ Route::get('/articles','ArticleController@index')->name('allarticles');
 Route::get('/articles/{category}/{id}/{slug}',
 	'ArticleController@show')->name('singleArticle');
 
+
+
+
+
 /**
  * Admin Routes TODO : grouping namespace
  */

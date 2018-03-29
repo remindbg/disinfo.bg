@@ -38,20 +38,26 @@
                             /></div>
                         <div class="col-md-9 col-xs-12">
                             <p>{{ str_limit(strip_tags($article->body), 255)}}</p>
+                            <hr>
+
                             <a href="/articles/{{$article->category->slug}}/{{$article->id}}/{{$article->slug}}"
                                class="btn
                             btn-success"> Повече..
                                 .</a></div>
                     </div>
                     <div class="col-lg-12">
-                        <hr>
+                        <ol class="breadcrumb m-b-10 inline small">
+                            <li class="breadcrumb-item">Етикети: </li>
+                            <li class="breadcrumb-item"><a href="#">#Технологии</a></li>
+                            <li class="breadcrumb-item"><a href="#">#Фейсбуук</a></li>
+                            <li class="breadcrumb-item active">Data</li>
+                        </ol>
                         <div class="like-comm">
                             <a href="javascript:void(0)" class="link m-r-10">2 Коментара</a>
                             <a href="javascript:void(0)" class="link m-r-10"> <i class="fa fa-eye
                                 text-primary"></i> {{$article->views}}</a>
                         </div>
                     </div>
-
             </div>
         @endforeach
     </div>

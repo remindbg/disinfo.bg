@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Article;
-class ArticleController extends Controller
+use App\Tag;
+use Illuminate\Support\Facades\Session;
+
+class TagsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +16,7 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        $articles = Article::paginate(8);
-        return view('articles.all',compact('articles'));
-
+        //
     }
 
     /**
@@ -37,7 +37,7 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
     }
 
     /**
@@ -46,14 +46,9 @@ class ArticleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($category,$id,$slug)
+    public function show($id)
     {
-
-        $article = Article::find($id);
-        $article->views++;
-        $article->save();
-        return view('articles.single',compact('article'));
-
+        //
     }
 
     /**
