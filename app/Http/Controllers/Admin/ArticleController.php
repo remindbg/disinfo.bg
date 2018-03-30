@@ -75,7 +75,11 @@ class ArticleController extends Controller
      */
     public function edit($id)
     {
-
+        $categories = Category::all();
+        $article = Article::find($id);
+        return view('admin.articles.edit',[
+            'article' => $article,
+            'categories' => $categories]);
     }
 
     /**
@@ -87,7 +91,18 @@ class ArticleController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $article = Article::find($id);
 
+        $article->title = $request->title;
+        $article->category_id = $request->category_id;
+        $article->body = $request->body;
+        $article->imageurl = $request->imageurl;
+        $article->slug = $request->slug;
+        $article->save();
+        $data['id'] = $id;
+
+       // $article->updateArticle($data);
+        return redirect()->back()->with('message', 'Успешно');
     }
 
     /**

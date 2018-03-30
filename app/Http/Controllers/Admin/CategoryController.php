@@ -75,7 +75,7 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request,$id = 1)
+    public function update(Request $request,$id )
     {
 
         $this->validate($request, [
@@ -84,7 +84,8 @@ class CategoryController extends Controller
         ]);
         Category::find($id)->update($request->all());
 
-        return redirect()->back()->with('message', 'Успешно');    }
+        return redirect()->back()->with('message', 'Успешно');
+    }
 
     /**
      * Remove the specified resource from storage.

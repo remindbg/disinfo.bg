@@ -42,13 +42,15 @@ Route::post('/admin/desinfo/store', 'Admin\DesinfoController@store')->name('stor
 /**
  * Articles Routes
  */
-Route::get('/admin/articles/categories/create', 'Admin\CategoryController@create')->name('adminCategoryCreate');
-Route::post('/admin/articles/categories/create', 'Admin\CategoryController@store')->name('adminCategoryStore');
+Route::get('/admin/articles/categories/create', 'Admin\CategoryController@create');
+Route::post('/admin/articles/categories/create', 'Admin\CategoryController@store');
 Route::get('/admin/articles/create', 'Admin\ArticleController@create')->name('adminCreateArticle');
 Route::post('/admin/articles/store', 'Admin\ArticleController@store')->name('adminStoreArticle');
 Route::get('/admin/articles/categories/all', 'Admin\CategoryController@index');
+Route::get('/admin/articles/edit/{id}','Admin\ArticleController@edit');
+Route::post('/admin/articles/update/{id}','Admin\ArticleController@update');
+// cats
 Route::get('/admin/articles/categories/edit/{id}','Admin\CategoryController@edit');
-//ffs
 Route::post('/admin/articles/categories/update/{id}/','Admin\CategoryController@update')->name('updateCategory');
 Route::get('/admin/articles/all', 'Admin\ArticleController@index')->name('allAdminArticles');
 Route::get('/admin/articles/edit/{id}', 'Admin\ArticleController@edit')->name('adminCreateEdit');

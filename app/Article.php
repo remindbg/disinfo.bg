@@ -7,7 +7,7 @@ use Category;
 use Carbon\Carbon;
 class Article extends Model
 {
-
+    protected $guarded = [];
     public function category(){
         return $this->belongsTo('App\Category');
     }
@@ -23,6 +23,20 @@ class Article extends Model
        // $this->save();
 
 
+    }
+
+    public function updateArticle($data) {
+        $article = Article::find($data['id']);
+       // $article = $this->find($data['id']);
+
+        $article->category_id = $data['category_id'];
+        $article->title = $data['title'];
+        $article->slug = $data['slug'];
+        $article->imageurl = $data['imageurl'];
+        $article->body = $data['body'];
+        // to do tags mb
+        $article->save();
+        return 1;
     }
 
 
