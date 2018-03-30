@@ -12,8 +12,9 @@ class ArticleController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($category,$id)
     {
+
         $articles = Article::paginate(8);
         return view('articles.all',compact('articles'));
 

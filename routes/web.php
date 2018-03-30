@@ -27,7 +27,7 @@ Route::get('/articles','ArticleController@index')->name('allarticles');
 Route::get('/articles/{category}/{id}/{slug}',
 	'ArticleController@show')->name('singleArticle');
 
-
+Route::get('/articles/{category}/{id}','CategoryController@index');
 
 
 
