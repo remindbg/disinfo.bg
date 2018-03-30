@@ -12,7 +12,7 @@ class ArticleController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($category,$id)
+    public function index()
     {
 
         $articles = Article::paginate(8);

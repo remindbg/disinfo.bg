@@ -14,11 +14,14 @@ class CategoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($category,$id)
+    public function index()
     {
-            $articles = Category::with('articles')->get();
-            //dd($articles);
-            return view('artCategories.all',compact('articles'));
+        //$articles = Category::with('articles')->Where('name',$category)->get();
+       // $cat = Category::where('name', $category)->get();
+       // $articles = Category::with('articles')->where('name', $category)->get();
+       // $articles = DB::table('category_articles')->where('name', $category)->get();
+        //dd($articles);
+
     }
 
     /**
@@ -48,9 +51,11 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($category)
     {
-        //
+        $articles =  Category::where('slug', $category)->first()->articles()->paginate(8);
+        $category = Category::where('slug',$category)->first();
+        return view('artCategories.all',compact('articles','category'));
     }
 
     /**

@@ -62,15 +62,10 @@ class CategoryController extends Controller
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
-        //
+        $category = Category::find($id);
+        return view('admin.articleCategories.edit',compact('category'));
     }
 
     /**
@@ -80,9 +75,15 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request,$id)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required',
+            'slug' => 'required',
+        ]);
+        Category::find($id)->update($request->all());
+
+        return Redirect::back();
     }
 
     /**

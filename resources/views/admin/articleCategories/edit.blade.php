@@ -3,7 +3,7 @@
 
     <!-- Start Page content -->
     <div class="card-box">
-        <h4 class="header-title mb-4">Нова Категория</h4>
+        <h4 class="header-title mb-4">Редактиране на  Категория</h4>
         @if(\Session::has('success'))
             <div class="alert alert-success">
                 {{\Session::get('success')}}
@@ -20,35 +20,36 @@
         @endif
         <div class="row">
             <div class="col-lg-12">
-                <form class="form-horizontal" role="form" method="POST" action="{{url
-                ('/admin/articles/categories/create')
+                <form class="form-horizontal" role="form" method="POST" action="{{route('updateCategory',$category->id)
                 }}">
+
                     <input type="hidden" value="{{csrf_token()}}" name="_token" />
                     <div class="form-group row">
                         <label class="col-2 col-form-label">Заглавие * </label>
                         <div class="col-10">
-                            <input type="text" class="form-control" value="" name="name">
+                            <input type="text" class="form-control" value="{{$category->name}}" name="name">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-2 col-form-label">Slug ( url ) * </label>
                         <div class="col-10">
-                            <input type="text" class="form-control" value="" name="slug">
+                            <input type="text" class="form-control" value="{{$category->slug}}" name="slug">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-2 col-form-label">Описание</label>
                         <div class="col-10">
-                            <input type="text" class="form-control" value="" name="description">
+                            <input type="text" class="form-control" value="{{$category->description}}"
+                                   name="description">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-2 col-form-label">meta image url </label>
                         <div class="col-10">
-                            <input type="text" class="form-control" value="" name="imageurl">
+                            <input type="text" class="form-control" value="{{$category->imageurl}}" name="imageurl">
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-primary">Добави</button>
+                    <button type="submit" class="btn btn-primary">Редакция</button>
 
                 </form>
             </div>
@@ -58,8 +59,8 @@
 
 @endsection
 
-        @section('scripts')
-        <script>
+@section('scripts')
+    <script>
         $(document).ready(function() {
 
             if ($("textarea").length > 0) {

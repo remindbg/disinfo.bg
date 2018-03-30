@@ -1,14 +1,14 @@
 @extends('layouts.front')
 
 @section('meta')
-    <title>Статии, Новини, Анализи | Desinfo.Info</title>
-    <meta name="title" content="Статии, Новини, Анализи | Desinfo.Info">
+    <title>{{$category->name}} | Desinfo.Info</title>
+    <meta name="title" content="{{$category->name}} | Desinfo.Info">
     <meta name="description" content="Секция Новини, Статии и Анализи - desinfo.info - бъдете информирани">
     <meta property="og:url"         content="{{url()->current()}}" />
     <meta property="og:type"        content="website"/>
-    <meta property="og:title"       content="Статии, Новини, Анализи | Desinfo.Info" />
-    <meta property="og:description" content="Секция Новини, Статии и Анализи - desinfo.info - бъдете информирани">
-    <meta property="og:image"       content="" />
+    <meta property="og:title"       content="{{$category->name}} | Desinfo.Info" />
+    <meta property="og:description" content="{{$category->description}}">
+    <meta property="og:image"       content="{{$category->imageurl}}" />
 @endsection
 @section('title','Статии, Новини И Анализи')
 @section('content')

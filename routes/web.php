@@ -27,9 +27,7 @@ Route::get('/articles','ArticleController@index')->name('allarticles');
 Route::get('/articles/{category}/{id}/{slug}',
 	'ArticleController@show')->name('singleArticle');
 
-Route::get('/articles/{category}/{id}','CategoryController@index');
-
-
+Route::get('/articles/{category}/','CategoryController@show');
 
 /**
  * Admin Routes TODO : grouping namespace
@@ -48,8 +46,10 @@ Route::get('/admin/articles/categories/create', 'Admin\CategoryController@create
 Route::post('/admin/articles/categories/create', 'Admin\CategoryController@store')->name('adminCategoryStore');
 Route::get('/admin/articles/create', 'Admin\ArticleController@create')->name('adminCreateArticle');
 Route::post('/admin/articles/store', 'Admin\ArticleController@store')->name('adminStoreArticle');
-Route::get('/admin/articles/categories/all', 'Admin\CategoryController@index')->name('adminCategoryStore');
-
+Route::get('/admin/articles/categories/all', 'Admin\CategoryController@index');
+Route::get('/admin/articles/categories/edit/{id}','Admin\CategoryController@edit');
+//ffs
+Route::post('/admin/articles/categories/update/','Admin\CategoryController@update')->name('updateCategory');
 Route::get('/admin/articles/all', 'Admin\ArticleController@index')->name('allAdminArticles');
 Route::get('/admin/articles/edit/{id}', 'Admin\ArticleController@edit')->name('adminCreateEdit');
 Route::post('/admin/articles/edit/{id}', 'Admin\ArticleController@update')->name('adminCreateUpdate');

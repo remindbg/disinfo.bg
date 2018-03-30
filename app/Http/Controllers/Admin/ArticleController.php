@@ -75,7 +75,7 @@ class ArticleController extends Controller
      */
     public function edit($id)
     {
-        //
+
     }
 
     /**
@@ -87,7 +87,7 @@ class ArticleController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
     }
 
     /**
