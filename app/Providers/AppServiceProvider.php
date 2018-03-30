@@ -14,6 +14,13 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Schema::defaultStringLength(191);
+       //todo view()->composer('partials.sidebar', function ($view) {
+
+            // Get the $data
+
+          //  $view->with('data', $data);
+
+        });
     }
 
     /**

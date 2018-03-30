@@ -84,8 +84,7 @@ class CategoryController extends Controller
         ]);
         Category::find($id)->update($request->all());
 
-        return redirect('admin/articles/categories/all');
-    }
+        return redirect()->back()->with('message', 'Успешно');    }
 
     /**
      * Remove the specified resource from storage.
