@@ -75,15 +75,16 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request,$id)
+    public function update(Request $request,$id = 1)
     {
+
         $this->validate($request, [
             'name' => 'required',
             'slug' => 'required',
         ]);
         Category::find($id)->update($request->all());
 
-        return Redirect::back();
+        return redirect('admin/articles/categories/all');
     }
 
     /**

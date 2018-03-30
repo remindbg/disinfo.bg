@@ -49,7 +49,7 @@ Route::post('/admin/articles/store', 'Admin\ArticleController@store')->name('adm
 Route::get('/admin/articles/categories/all', 'Admin\CategoryController@index');
 Route::get('/admin/articles/categories/edit/{id}','Admin\CategoryController@edit');
 //ffs
-Route::post('/admin/articles/categories/update/','Admin\CategoryController@update')->name('updateCategory');
+Route::post('/admin/articles/categories/update/{id}/','Admin\CategoryController@update')->name('updateCategory');
 Route::get('/admin/articles/all', 'Admin\ArticleController@index')->name('allAdminArticles');
 Route::get('/admin/articles/edit/{id}', 'Admin\ArticleController@edit')->name('adminCreateEdit');
 Route::post('/admin/articles/edit/{id}', 'Admin\ArticleController@update')->name('adminCreateUpdate');

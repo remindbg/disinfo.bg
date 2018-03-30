@@ -20,8 +20,10 @@
         @endif
         <div class="row">
             <div class="col-lg-12">
-                <form class="form-horizontal" role="form" method="POST" action="{{route('updateCategory',$category->id)
-                }}">
+
+                <form class="form-horizontal" role="form" method="POST"
+                      action="/admin/articles/categories/update/{{$category->id}}
+              ">
 
                     <input type="hidden" value="{{csrf_token()}}" name="_token" />
                     <div class="form-group row">
