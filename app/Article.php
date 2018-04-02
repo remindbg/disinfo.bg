@@ -18,9 +18,8 @@ class Article extends Model
         $this->imageurl = $data['imageurl'];
         $this->body = $data['body'];
         $this->category_id = $data['category_id'];
-        $this->tags = $data['tags'];
-        dd($this->tags);
-       // $this->save();
+
+        $this->save();
 
 
     }
