@@ -7,6 +7,16 @@ use App\Http\Controllers\Controller;
 use App\Desinfo;
 class DesinfoController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+
+
+    }
+
+
+
     public function single($id) {
         $desinfo = Desinfo::findOrFail($id);
         return view('desinfo.single', ['desinfo' => $desinfo]);

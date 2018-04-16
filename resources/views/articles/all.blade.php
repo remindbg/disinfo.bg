@@ -46,12 +46,7 @@
                                 .</a></div>
                     </div>
                     <div class="col-lg-12">
-                        <ol class="breadcrumb m-b-10 inline small">
-                            <li class="breadcrumb-item">Етикети: </li>
-                            <li class="breadcrumb-item"><a href="#">#Технологии</a></li>
-                            <li class="breadcrumb-item"><a href="#">#Фейсбуук</a></li>
-                            <li class="breadcrumb-item active">Data</li>
-                        </ol>
+
                         <div class="like-comm">
                             <a href="javascript:void(0)" class="link m-r-10">2 Коментара</a>
                             <a href="javascript:void(0)" class="link m-r-10"> <i class="fa fa-eye
@@ -60,6 +55,8 @@
                     </div>
             </div>
         @endforeach
+          {{$articles->links("pagination::bootstrap-4")}}
+
     </div>
 @endsection
 
