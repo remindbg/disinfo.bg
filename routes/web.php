@@ -14,6 +14,7 @@ Auth::routes();
 Route::get('/', function () {
     return view('homepage');
 });
+
 Route::get('/admin', function () {
     return view('layouts.adminlayout');
 });
