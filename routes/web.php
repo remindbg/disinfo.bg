@@ -11,15 +11,14 @@
 |
 */
 Auth::routes();
-Route::get('/', function () {
-    return view('homepage');
-});
+
 
 Route::get('/admin', function () {
     return view('layouts.adminlayout');
 });
  // Route::get('/home', 'HomeController@index')->name('home');
-
+Route::get('/','ArticleController@index')->name('allarticles');
+// todo real homepage
 /**
  * Front / Article / Categories Routes
  */

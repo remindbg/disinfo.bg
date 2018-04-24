@@ -120,6 +120,8 @@ class ArticleController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Article::destroy($id);
+        return redirect()->route('allAdminArticles')->with('message', 'Успешно Изтрита Статия');
+
     }
 }
