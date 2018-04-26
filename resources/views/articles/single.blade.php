@@ -18,11 +18,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="like-comm">
-                <a href="#comments" class="link m-r-10">2 Коментара</a>
-                <a href="javascript:void(0)" class="link m-r-10"> <i class="fa fa-eye
-                                            text-primary"></i> {{$article->views}}</a>
-            </div>
+
 
                 <hr>
                 <div class="m-t-20 row">
@@ -40,6 +36,7 @@
                         <a href="javascript:void(0)" class="link m-r-10">2 Коментара</a>
                         <a href="javascript:void(0)" class="link m-r-10"> <i class="fa fa-eye
                         text-primary"></i> {{$article->views}}</a>
+                        <a href="/articles/{{$article->category->slug}}">{{$article->category->name}}</a>
                     </div>
                 </div>
             </div>
