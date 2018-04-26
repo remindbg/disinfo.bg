@@ -7,19 +7,6 @@
         <div class="ribbon-wrapper card">
             <div class="ribbon ribbon-bookmark  ribbon-warning">21.03.2017</div>
             <h3 class="font-weight-bold">{{$article->title}}</h3>
-
-            <div class="ml-auto">
-                <ul class="list-inline">
-                    <small>Категория:</small>
-                    <li>
-                        <h6 class="text-muted  text-info"><i class="fa fa-circle font-10 m-r-10"></i>
-                            <a href="/articles/{{$article->category->slug}}">{{$article->category->name}}</a>
-                        </h6>
-                    </li>
-                </ul>
-            </div>
-
-
                 <hr>
                 <div class="m-t-20 row">
                     <div class="col-md-3 col-xs-12"><img src="{{$article->imageurl}}" alt="Статия Изображение"
