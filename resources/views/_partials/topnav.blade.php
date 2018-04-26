@@ -13,15 +13,7 @@
     <!-- Bootstrap Core CSS -->
     <link href="{{ URL::asset('assets/plugins/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
     <!-- chartist CSS -->
-    <link href="    {{ URL::asset('assets/plugins/chartist-js/dist/chartist.min.css') }}
-            " rel="stylesheet">
-    <link href="    {{ URL::asset('assets/plugins/chartist-js/dist/chartist-init.css') }}
-            " rel="stylesheet">
-    <link href="    {{ URL::asset('assets/plugins/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.css') }}
-            " rel="stylesheet">
-    <!--This page css - Morris CSS -->
-    <link href="    {{ URL::asset('assets/plugins/c3-master/c3.min.css') }}
-            " rel="stylesheet">
+
     <script src="{{URL::asset('assets/plugins/tinymce/tinymce.min.js')}}"></script>
     <!-- Custom CSS -->
     <link href="{{ URL::asset('css/style.css') }}" rel="stylesheet">
@@ -54,40 +46,26 @@
     <!-- ============================================================== -->
     <header class="topbar">
         <nav class="navbar top-navbar navbar-expand-md navbar-light">
-            <!-- ============================================================== -->
-            <!-- Logo -->
-            <!-- ============================================================== -->
             <div class="navbar-header">
                 <a class="navbar-brand" href="index.html">
                     <!-- Logo icon -->
                     <b>
                        <i class="wi wi-sunset"></i>
-
-
                     </b>
-                    <!--End Logo icon -->
-                    <!-- Logo text -->
-                    <span>
 
-                        </span>
                 </a>
             </div>
-            <!-- ============================================================== -->
-            <!-- End Logo -->
-            <!-- ============================================================== -->
             <div class="navbar-collapse">
 
                 <ul class="navbar-nav mr-auto mt-md-0">
-                    <!-- This is  -->
+
                     <li class="nav-item">
                         <a class="nav-link nav-toggler hidden-md-up text-muted waves-effect waves-dark"
                            href="javascript:void(0)">
                             <i class="mdi mdi-menu"></i>
                         </a>
                     </li>
-                    <!-- ============================================================== -->
-                    <!-- Search -->
-                    <!-- ============================================================== -->
+
                     <li class="nav-item hidden-sm-down search-box">
                         <a class="nav-link hidden-sm-down text-muted waves-effect waves-dark" href="javascript:void(0)">
                             <i class="ti-search"></i>
@@ -120,18 +98,15 @@
                         <div class="dropdown-menu mailbox dropdown-menu-right scale-up" aria-labelledby="2">
                             <ul>
                                 <li>
-                                    <div class="drop-title">Статии И Новини</div>
+                                    <div class="drop-title">Съобщения</div>
                                 </li>
                                 <li>
                                     <div class="message-center">
                                         <!-- Message -->
                                         <a href="">
-                                            <div class="user-img"> <img src="/assets/images/users/1.jpg" alt="user"
-                                                                        class="img-circle"> <span class="profile-status busy pull-right"></span> </div>
+
                                             <div class="mail-contnet">
-                                                <h6>Русия Напада Китай заради петрола</h6> <span class="mail-desc">Just
-                                                    see the my
-                                                        admin!</span> <span class="time">9:30 AM</span> </div>
+                                                 </div>
                                         </a>
 
 
@@ -154,14 +129,14 @@
                         <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href=""
                            data-toggle="dropdown" aria-haspopup="true"
                            aria-expanded="false">
-                            <img src="/assets/images/users/1.jpg" alt="user" class="profile-pic"/>
+                            <img src="/images/static/avatar.jpg" alt="user" class="profile-pic"/>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right scale-up">
                             <ul class="dropdown-user">
                                 <li>
                                     <div class="dw-user-box">
                                         <div class="u-img">
-                                            <img src="/assets/images/users/1.jpg" alt="user">
+                                            <img src="/images/static/avatar.jpg" alt="user">
                                         </div>
                                         <div class="u-text">
 

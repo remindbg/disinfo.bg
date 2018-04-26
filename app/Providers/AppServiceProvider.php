@@ -21,11 +21,10 @@ class AppServiceProvider extends ServiceProvider
             $categories = Category::all();
             $view->with(compact('articles','categories')) ;
         }) ;
-            // Get the $data
-
-          //  $view->with('data', $data);
-
-        //});
+        View::composer('*', function($view)
+        {
+            $view->with('headercats', Category::all());
+        });
     }
 
     /**

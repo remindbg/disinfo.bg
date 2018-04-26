@@ -11,48 +11,50 @@
                     </a>
                 </li>
                 <li>
-                    <a class="has-arrow " href="{{url::to('/desinfo/')}}" aria-expanded="false">
+                    <a class="has-arrow " href="#')}}" aria-expanded="false">
                         <i class="mdi mdi-block-helper"></i>
                         <span class="hide-menu">Дезинформация/ Фейк</span>
                     </a>
                     <ul aria-expanded="false" class="collapse">
                         <li>
-                            <a href="{{url::to('/desinfo/')}}">Всички</a>
+                            <a href="#">Всички</a>
                         </li>
                         <li>
-                            <a href="{{url::to('/desinfo/')}}">Популярни</a>
+                            <a href="#">Популярни</a>
                         </li>
                         <li>
                             <a class="has-arrow" href="#" aria-expanded="false">Сортиране</a>
                             <ul aria-expanded="false" class="collapse">
-                                <li>
-                                    <a href="{{url::to('/desinfo//filter/7')}}">Последните 7 дни</a>
+                                <li class="disabled">
+                                    <a href="#">Последните 7 дни</a>
                                 </li>
                                 <li>
-                                    <a href="{{url::to('/desinfo/filter/30')}}">Последни 30 дни</a>
+                                    <a href="#">Последни 30 дни</a>
                                 </li>
                             </ul>
                         </li>
                         <li>
-                            <a href="{{url::to('/desinfo/tags')}}">По Етикети</a>
+                            <a href="#">По Етикети</a>
                         </li>
                         <li>
-                            <a href="{{url::to('/desinfo/suggest')}}">Предложете Новина</a>
+                            <a href="#">Предложете Новина</a>
                         </li>
                     </ul>
                 </li>
                 <li>
-                    <a class="has-arrow " href="{{url::to('/statii')}}" aria-expanded="false">
+                    <a class="has-arrow " href="#" aria-expanded="false">
                         <i class="mdi mdi-bullseye"></i>
                         <span class="hide-menu">Статии</span>
                     </a>
                     <ul aria-expanded="false" class="collapse">
-                        <li>
-                            <a href="{{url::to('/articles')}}">Всички</a>
-                        </li>
-                        <li>
-                            <a href="{{url::to('/articles/tags/')}}">Етикети</a>
-                        </li>
+                        @foreach($headercats as $cat)
+                            <li>
+                                <a href="/articles/{{$cat->slug}}/">{{$cat->name}}</a>
+                            </li>
+                        @endforeach()
+                            <li>
+                                <a href="{{url::to('/articles')}}">Всички</a>
+                            </li>
                     </ul>
                 </li>
                 <li>
@@ -62,16 +64,16 @@
                     </a>
                     <ul aria-expanded="false" class="collapse">
                         <li>
-                            <a href="widget-charts.html">Всички</a>
+                            <a href="#">Всички</a>
                         </li>
                         <li>
-                            <a href="widget-charts.html">Последно Добавени</a>
+                            <a href="#">Последно Добавени</a>
                         </li>
                         <li>
-                            <a href="widget-charts.html">По Етикети</a>
+                            <a href="#">По Етикети</a>
                         </li>
                         <li>
-                            <a href="widget-charts.html">Добавете Медия</a>
+                            <a href="#">Добавете Медия</a>
                         </li>
                     </ul>
                 </li>
@@ -99,11 +101,8 @@
                             <a href="#">Очаквайте Скоро</a>
                         </li>
 
-
                     </ul>
                 </li>
-
-
             </ul>
         </nav>
         <!-- End Sidebar navigation -->
