@@ -12,6 +12,12 @@ class ArticleController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function homepage() // just a quick fix ! TODO
+    {
+        $articles = Article::orderBy('created_at', 'desc')->paginate(8);
+        return view('homepage',compact('articles'));
+
+    }
     public function index()
     {
         $articles = Article::orderBy('created_at', 'desc')->paginate(3);

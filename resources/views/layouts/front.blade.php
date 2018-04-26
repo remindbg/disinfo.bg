@@ -18,7 +18,7 @@
                         <div class="d-flex m-r-20 m-l-10 hidden-md-down">
                             <div class="chart-text m-r-10">
                                 <h6 class="m-b-0">
-                                    <small>Версия 1.0.1  *beta* update:  01.04.2018</small>
+                                    <small>Версия 1.0.213</small>
                                 </h6>
                             </div>
                         </div>
@@ -36,24 +36,15 @@
                     @yield('content')
                 @include('_partials.defSidebar')
             </div>
-
-
         </div>
 
-
-
         </div>
-
-    <!-- ============================================================== -->
-    <!-- ============================================================== -->
-    <!-- Right sidebar -->
-    <!-- ============================================================== -->
     <div class="right-sidebar">
         <div class="slimscrollright">
             <div class="rpanel-title"> Настройки
                 <span>
-                                <i class="ti-close right-side-toggle"></i>
-                            </span>
+                      <i class="ti-close right-side-toggle"></i>
+               </span>
             </div>
             <div class="r-panel-body">
                 <ul id="themecolors" class="m-t-20">
@@ -104,40 +95,15 @@
             </div>
         </div>
     </div>
-    <!-- ============================================================== -->
-    <!-- End Right sidebar -->
-    <!-- ============================================================== -->
-    </div>
-    <!-- ============================================================== -->
-    <!-- End Container fluid  -->
-    <!-- ============================================================== -->
-    <!-- ============================================================== -->
-    <!-- footer -->
-    <!-- ============================================================== -->
+
     <footer class="footer"> © 2018 desinfo.info</footer>
-    <!-- ============================================================== -->
-    <!-- End footer -->
-    <!-- ============================================================== -->
-    </div>
-    <!-- ============================================================== -->
-    <!-- End Page wrapper  -->
-    <!-- ============================================================== -->
-    </div>
-    <!-- ============================================================== -->
-    <!-- End Wrapper -->
-    <!-- ============================================================== -->
-    <!-- ============================================================== -->
-    <!-- All Jquery -->
-    <!-- ============================================================== -->
 
     <script src="{{ URL::asset('assets/plugins/jquery/jquery.min.js') }}
             "></script>
-    <!-- Bootstrap tether Core JavaScript -->
     <script src="{{ URL::asset('assets/plugins/bootstrap/js/popper.min.js') }}
             "></script>
     <script src="{{ URL::asset('assets/plugins/bootstrap/js/bootstrap.min.js') }}
             "></script>
-    <!-- slimscrollbar scrollbar JavaScript -->
     <script src="{{ URL::asset('js/jquery.slimscroll.js') }}
             "></script>
     <!--Wave Effects -->
@@ -146,8 +112,6 @@
     <!--Menu sidebar -->
     <script src="{{ URL::asset('js/sidebarmenu.js') }}
             "></script>
-    <!--stickey kit -->
-
     <script src="{{ URL::asset('assets/plugins/sticky-kit-master/dist/sticky-kit.min.js') }}
             "></script>
     <script src="{{ URL::asset('assets/plugins/sparkline/jquery.sparkline.min.js') }}
@@ -157,26 +121,8 @@
     <!--Custom JavaScript -->
     <script src="{{ URL::asset('js/custom.min.js') }}
             "></script>
-    <!-- ============================================================== -->
-    <!-- This page plugins -->
-    <!-- ============================================================== -->
-    <!-- chartist chart -->
-
-    <script src="{{ URL::asset('assets/plugins/chartist-js/dist/chartist.min.js') }}
-            "></script>
-    <script src="{{ URL::asset('assets/plugins/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.min.js') }}
-            "></script>
-    <!--c3 JavaScript -->
-    <script src="{{ URL::asset('assets/plugins/d3/d3.min.js') }}
-            "></script>
-    <script src="{{ URL::asset('assets/plugins/c3-master/c3.min.js') }}
-            "></script>
-    <!-- Chart JS -->
     <script src="{{ URL::asset('js/dashboard6.js') }}
             "></script>
-    <!-- ============================================================== -->
-    <!-- Style switcher -->
-    <!-- ============================================================== -->
     <script src="{{ URL::asset('assets/plugins/styleswitcher/jQuery.style.switcher.js') }}
             "></script>
 
