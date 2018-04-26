@@ -9,9 +9,9 @@
     <meta property="og:title"       content="Desinfo.Info - Случаи на Дезинформация в българските медии." />
     <meta property="og:description" content="Desinfo.Info - Случаи на Дезинформация в българските медии. Статии,
     Новини, Анализи, Медии в България">
-    <meta property="og:image"       content="{{asset('/images/static/homepage.jpg')}}" />
+    <meta property="og:image" content="{{asset('/images/static/homepage.jpg')}}">
 @endsection
-@section('title','Последни Статии')
+@section('title','Последно')
 @section('content')
     <div class="col-lg-8">
         @foreach($articles as $article)
