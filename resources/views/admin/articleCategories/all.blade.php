@@ -3,6 +3,9 @@
     <div class="card-box">
         <h4 class="header-title mb-4">Категории</h4>
         <div class="row">
+            <a href="/admin/articles/categories/create" class="btn
+                            btn-success"> Нова Категория..
+                .</a>
             <div class="col-lg-12">
                 <div class="table-responsive">
                     <table class="table table-bordered">

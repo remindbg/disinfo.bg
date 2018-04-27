@@ -1,0 +1,26 @@
+.article-featured-image  {
+    max-width: 500px;
+    margin:20px;
+    padding-top:0px;
+}
+
+.article-text {
+    color: #3a3a3f;
+
+}
+
+.page-titles {
+    padding-top: 0;
+}
+
+.text-themecolor {
+    padding:0;
+}
+.sidebar-cats  td {
+    padding-top:5px;
+    padding-bottom:5px;
+}
+
+.card-title {
+    margin-bottom:0;
+}

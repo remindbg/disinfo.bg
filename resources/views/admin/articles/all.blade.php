@@ -3,6 +3,9 @@
     <div class="card-box">
         <h4 class="header-title mb-4">Статии</h4>
         <div class="row">
+            <a href="/admin/articles/create" class="btn
+                            btn-success"> Нова Статия..
+                .</a>
             <div class="col-lg-12">
                 <div class="table-responsive">
                     <table class="table table-bordered">

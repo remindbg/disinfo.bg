@@ -22,8 +22,9 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        $articles = Article::all();
-       // dd($articles);
+        $articles = Article::orderBy('created_at', 'desc')->paginate(8);
+
+        // dd($articles);
 
         return view('admin.articles.all',['articles' => $articles]);
 

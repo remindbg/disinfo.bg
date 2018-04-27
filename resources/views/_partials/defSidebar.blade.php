@@ -22,7 +22,7 @@
         <div class="card-body">
             <h4 class="card-title">Статии И Анализи</h4>
             <div class="card-body">
-                <table class="table browser no-border">
+                <table class="sidebar-cats table browser no-border">
                     <tbody>
                     @foreach($categories as $category)
                     <tr>

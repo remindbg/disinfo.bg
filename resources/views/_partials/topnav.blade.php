@@ -20,6 +20,8 @@
     <!-- You can change the theme colors from here -->
     <link href="{{ URL::asset('/css/colors/blue.css')}}
             " id="theme" rel="stylesheet">
+    <link href="{{ URL::asset('/css/desinfo.css') }}" rel="stylesheet">
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -119,12 +121,7 @@
                             </ul>
                         </div>
                     </li>
-                    <!-- ============================================================== -->
-                    <!-- End Messages -->
-                    <!-- ============================================================== -->
-                    <!-- ============================================================== -->
-                    <!-- Profile -->
-                    <!-- ============================================================== -->
+
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href=""
                            data-toggle="dropdown" aria-haspopup="true"
