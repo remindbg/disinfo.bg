@@ -16,7 +16,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        Carbon::setLocale('bg');
+
         Schema::defaultStringLength(191);
         View::composer('_partials.defSidebar', function($view){
            $articles = Article::orderBy('created_at','desc')->take(9)->get();
