@@ -42,10 +42,8 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-2 col-form-label">Етикети</label>
-                        <div class="col-10">
-                            <input type="text" class="form-control" value="" name="tags">
-                        </div>
+                        <input type="text" id="tags" name="tags" value="Amsterdam,Washington,Sydney,Beijing,Cairo"
+                               data-role="tagsinput" />
                     </div>
                     <div class="form-group row">
                         <label class="col-2 col-form-label">Категория</label>
@@ -75,7 +73,11 @@
 
 @section('scripts')
 
+    <script src="{{asset('/assets/plugins/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('/assets/plugins/multiselect/js/jquery.multi-select.js')}}"></script>
     <script>
+
+
         $(document).ready(function() {
 
             if ($("textarea").length > 0) {

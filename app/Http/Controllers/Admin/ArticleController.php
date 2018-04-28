@@ -50,7 +50,7 @@ class ArticleController extends Controller
     public function store(Request $request)
     {
         $article = new Article();
-
+       // dd($request);
         $data = $this->validate($request, [
             'title'=>'required',
             'imageurl' => 'required',
