@@ -25,3 +25,8 @@
 .card-title {
     margin-bottom:0;
 }
+
+.card-text {
+    padding:0;
+    margin:0;
+}

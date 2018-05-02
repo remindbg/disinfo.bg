@@ -14,15 +14,13 @@
 @section('content')
     <div class="col-lg-8">
         @foreach($articles as $article)
-            <div class="ribbon-wrapper card">
+            <div class="ribbon-wrapper card text-themecolor">
                 <div class="ribbon ribbon-bookmark  ribbon-warning">{{$article->created_at}}</div>
                 <a href="/articles/{{$article->category->slug}}/{{$article->id}}/{{$article->slug}}"><h3
-                            class="font-weight-bold">{{$article->title}}</h3></a>
-
+                            class="text-themecolor">{{$article->title}}</h3></a>
                 <div class="m-t-20 row">
                     <div class="col-md-3 col-xs-12"><img src="{{$article->imageurl}}" alt="Статия Изображение"
-                                                         class="img-responsive
-                        radius"
+                                                         class="img-responsive radius"
                         /></div>
                     <div class="col-md-9 col-xs-12">
                         <p>{{ str_limit(strip_tags($article->body), 150)}}</p>

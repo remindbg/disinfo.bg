@@ -18,7 +18,7 @@
     <!-- Custom CSS -->
     <link href="{{ URL::asset('css/style.css') }}" rel="stylesheet">
     <!-- You can change the theme colors from here -->
-    <link href="{{ URL::asset('/css/colors/blue.css')}}
+    <link href="{{ URL::asset('/css/colors/red-dark.css')}}
             " id="theme" rel="stylesheet">
     <link href="{{ URL::asset('/css/desinfo.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.css" />

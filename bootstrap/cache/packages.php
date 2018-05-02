@@ -24,18 +24,16 @@
       0 => 'Laravel\\Tinker\\TinkerServiceProvider',
     ),
   ),
-  'spatie/laravel-tags' => 
+  'laravelrus/localized-carbon' => 
   array (
     'providers' => 
     array (
-      0 => 'Spatie\\Tags\\TagsServiceProvider',
+      0 => 'Laravelrus\\LocalizedCarbon\\LocalizedCarbonServiceProvider',
     ),
-  ),
-  'spatie/laravel-translatable' => 
-  array (
-    'providers' => 
+    'aliases' => 
     array (
-      0 => 'Spatie\\Translatable\\TranslatableServiceProvider',
+      'LocalizedCarbon' => 'Laravelrus\\LocalizedCarbon\\LocalizedCarbon',
+      'DiffFormatter' => 'Laravelrus\\LocalizedCarbon\\DiffFactoryFacade',
     ),
   ),
 );

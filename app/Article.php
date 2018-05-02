@@ -7,7 +7,29 @@ use Category;
 use Carbon\Carbon;
 class Article extends Model
 {
+    protected $appends = ['bgmonth'];
     protected $guarded = [];
+
+
+    public function getBgMonthAttribute($date) // very bad fix, but /TODO :D
+    {
+        $createdDate = $this->created_at->month;
+        switch ($createdDate) {
+            case 1: return 'Януари';
+            case 2: return 'Фефруари';
+            case 3: return 'Март';
+            case 4: return 'Април';
+            case 5: return 'Май';
+            case 6: return 'Юни';
+            case 7: return 'Юли';
+            case 8: return 'Август';
+            case 9: return 'Септември';
+            case 10: return 'Октомври';
+            case 11: return 'Ноември';
+            case 12: return 'Декември';
+        }
+    }
+
     public function category(){
         return $this->belongsTo('App\Category');
     }
@@ -40,9 +62,4 @@ class Article extends Model
 
 
 
-    public function getCreatedAtAttribute($date)
-    {
-
-        return Carbon::createFromFormat('Y-m-d H:i:s', $date)->format('F-m-Y в H:i');
-    }
 }
