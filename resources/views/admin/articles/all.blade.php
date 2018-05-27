@@ -13,8 +13,7 @@
                         <tr>
                             <th>id</th>
                             <th>Заглавие</th>
-                            <th>Категория</th>
-                            <th>isApproved</th>
+                            <th>Одобрена?</th>
                             <th>Прегледа</th>
                             <th class="text-nowrap">Action</th>
                         </tr>
@@ -24,16 +23,22 @@
                         <tr>
                             <td>{{$article->id}}</td>
                             <td>{{$article->title}}</td>
-                            <td>{{$article->category->name}}</td>
-                            <td>{{$article->isApproved}}</td>
-                            <td>{{$article->views}}</td>
+                            @if($article->isActive == 0)
+                                <td>Не</td>
+                            @else
+                                <td>Да</td>
+                            @endif
+                                <td>{{$article->views}}</td>
                             <td>{{$article->created_at}}</td>
                             <td class="text-nowrap">
-                                <a href="/admin/articles/edit/{{$article->id}}" data-toggle="tooltip"
-                                   data-original-title="Edit">
-                                    <i class="fa
+                                <div class="btn btn-warning"> <a href="/admin/articles/edit/{{$article->id}}"><i class="fa
                                 fa-pencil
-                                text-inverse m-r-10"></i> </a>
+                                text-inverse m-r-10"></i>Edit </a></div>
+                                <form method="POST" action="/admin/articles/delete/{{$article->id}}">
+                                    {{ method_field('DELETE') }}
+                                    {{ csrf_field() }}
+                                    <button type="submit" onclick="return confirm('Are you sure?')" class="btn btn-red">Изтрий</button>
+                                </form>
                             </td>
                         </tr>
                           @endforeach
@@ -42,13 +47,14 @@
                 </div>
             </div>
         </div>
-        <!-- end row -->
     </div>
 
 @endsection
 
 @section('scripts')
     <script>
-
+        function confirmDelete() {
+            confirm('Искате ли да изтриете статията завинаги?');
+        }
     </script>
 @endsection

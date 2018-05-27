@@ -7,15 +7,17 @@
                 <dl class="small">
                     @foreach($articles as $article)
                     <dt>
-                        <a href="/articles/{{$article->category
-                        ->slug}}/{{$article->id}}/{{$article->slug}}">{{$article->title}}</a>
+                        <a href="/articles/{{$article->created_at->
+                            format('ymd')}}/{{$article->id}}/{{$article->slug}}">{{$article->title}}</a>
                     </dt>
-                    <dd>{{$article->created_at}}</dd>
+                    <dd> {{$article->created_at->diffForHumans()}}
+                        | на {{$article->created_at->format('d')}} {{$article->bgmonth}}
+                        {{$article->created_at->format('Y')}}г.</dd>
                     @endforeach()
                 </dl>
                 <small><a href="/articles/">Вижте Всички</a></small>
             </div>
-            <!-- /.card-body -->
+
         </div>
     </div>
     <div class="card">
@@ -24,13 +26,13 @@
             <div class="card-body">
                 <table class="sidebar-cats table browser no-border">
                     <tbody>
-                    @foreach($categories as $category)
-                    <tr>
-                        <td><a href="/articles/{{$category->slug}}">{{$category->name}}</a></td>
-                        <td class="text-right"><span class="label label-light-info">{{$category->articles()->count()
+                    @foreach($allcats as $category)
+                        <tr>
+                            <td><a href="/articles/{{$category->id}}/{{$category->slug}}">{{$category->name}}</a></td>
+                            <td class="text-right"><span class="label label-light-info">{{$category->articles()->count()
                         }}</span></td>
-                    </tr>
-                        @endforeach
+                        </tr>
+                    @endforeach
                     </tbody>
                 </table>
             </div>

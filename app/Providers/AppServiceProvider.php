@@ -1,10 +1,10 @@
 <?php
 
 namespace App\Providers;
+use App\Categories;
 use View;
 use Illuminate\Support\ServiceProvider;
 use  Illuminate\Support\Facades\Schema;
-use App\Category;
 use App\Article;
 use Carbon;
 class AppServiceProvider extends ServiceProvider
@@ -20,12 +20,13 @@ class AppServiceProvider extends ServiceProvider
         Schema::defaultStringLength(191);
         View::composer('_partials.defSidebar', function($view){
            $articles = Article::orderBy('created_at','desc')->take(9)->get();
-            $categories = Category::all();
-            $view->with(compact('articles','categories')) ;
+            //$categories = Category::all();
+            $allcats = Categories::with('articles')->get();
+            $view->with(compact('articles','allcats')) ;
         }) ;
         View::composer('*', function($view)
         {
-            $view->with('headercats', Category::all());
+           $view->with('allcats', Categories::all());
         });
     }
 

@@ -47,14 +47,12 @@
                         <span class="hide-menu">Статии</span>
                     </a>
                     <ul aria-expanded="false" class="collapse">
-                        @foreach($headercats as $cat)
+                        @foreach($allcats as $cat)
                             <li>
-                                <a href="/articles/{{$cat->slug}}/">{{$cat->name}}</a>
+                                <a href="/articles/{{$cat->id}}/{{$cat->slug}}/">{{$cat->name}}</a>
                             </li>
                         @endforeach()
-                            <li>
-                                <a href="{{url::to('/articles')}}">Всички</a>
-                            </li>
+
                     </ul>
                 </li>
                 <li>

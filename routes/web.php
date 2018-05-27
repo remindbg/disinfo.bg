@@ -15,7 +15,7 @@ Auth::routes();
 
 Route::get('/admin', function () {
     return view('layouts.adminlayout');
-});
+})->middleware('auth');;
  // Route::get('/home', 'HomeController@index')->name('home');
 //Route::get('/','ArticleController@index')->name('allarticles');
 Route::get('/','ArticleController@homepage')->name('homepage'); // real homepage
@@ -25,35 +25,39 @@ Route::get('/','ArticleController@homepage')->name('homepage'); // real homepage
  */
 
 Route::get('/articles','ArticleController@index')->name('allarticles');
-Route::get('/articles/{category}/{id}/{slug}',
+Route::get('/articles/{date}/{id}/{slug}',
 	'ArticleController@show')->name('singleArticle');
 
-Route::get('/articles/{category}/','CategoryController@show');
+Route::get('/articles/{id}/{slug}','CategoriesController@show');
 
 /**
  * Admin Routes TODO : grouping namespace
  */
 
-Route::get('/admin/desinfo/all', 'Admin\DesinfoController@all')->name('adminAllDesinfo');
-Route::get('/admin/desinfo/new', 'Admin\DesinfoController@create')->name('createDesinfo');
-
-Route::post('/admin/desinfo/store', 'Admin\DesinfoController@store')->name('storeDesinfo');
-
 
 /**
- * Articles Routes
+ * Аdmin Articles Routes
  */
-Route::get('/admin/articles/categories/create', 'Admin\CategoryController@create');
-Route::post('/admin/articles/categories/create', 'Admin\CategoryController@store');
+
+
 Route::get('/admin/articles/create', 'Admin\ArticleController@create')->name('adminCreateArticle');
 Route::post('/admin/articles/store', 'Admin\ArticleController@store')->name('adminStoreArticle');
-Route::get('/admin/articles/categories/all', 'Admin\CategoryController@index');
 Route::get('/admin/articles/edit/{id}','Admin\ArticleController@edit');
 Route::post('/admin/articles/update/{id}','Admin\ArticleController@update');
 // cats
-Route::get('/admin/articles/categories/edit/{id}','Admin\CategoryController@edit');
-Route::post('/admin/articles/categories/update/{id}/','Admin\CategoryController@update')->name('updateCategory');
-Route::get('/admin/articles/all', 'Admin\ArticleController@index')->name('allAdminArticles');
+Route::get('/admin/articles', 'Admin\ArticleController@index')->name('allAdminArticles');
 Route::get('/admin/articles/edit/{id}', 'Admin\ArticleController@edit')->name('adminCreateEdit');
 Route::post('/admin/articles/edit/{id}', 'Admin\ArticleController@update')->name('adminCreateUpdate');
-Route::post('/admin/articles/delete/{id}', 'Admin\ArticleController@destroy')->name('adminArticlesDestroy');
+Route::delete('/admin/articles/delete/{id}', 'Admin\ArticleController@destroy')->name('adminArticlesDestroy');
+
+
+
+
+/**
+ * Admin-ArticleCategories Routes
+ */
+Route::get('/admin/articles/categories', 'Admin\CategoriesController@index');
+Route::get('/admin/articles/categories/create', 'Admin\CategoriesController@create');
+Route::get('/admin/articles/categories/edit/{id}','Admin\CategoriesController@edit');
+Route::post('/admin/articles/categories/create', 'Admin\CategoriesController@store');
+Route::post('/admin/articles/categories/update/{id}/','Admin\CategoriesController@update')->name('updateCategories');

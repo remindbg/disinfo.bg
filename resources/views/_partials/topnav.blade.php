@@ -14,7 +14,6 @@
     <link href="{{ URL::asset('assets/plugins/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
     <!-- chartist CSS -->
 
-    <script src="{{URL::asset('assets/plugins/tinymce/tinymce.min.js')}}"></script>
     <!-- Custom CSS -->
     <link href="{{ URL::asset('css/style.css') }}" rel="stylesheet">
     <!-- You can change the theme colors from here -->
@@ -49,7 +48,7 @@
     <header class="topbar">
         <nav class="navbar top-navbar navbar-expand-md navbar-light">
             <div class="navbar-header">
-                <a class="navbar-brand" href="index.html">
+                <a class="navbar-brand" href="#">
                     <!-- Logo icon -->
                     <b>
                        <i class="wi wi-sunset"></i>

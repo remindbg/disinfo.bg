@@ -14,7 +14,9 @@ class ArticleController extends Controller
      */
     public function homepage() // just a quick fix ! TODO
     {
-        $articles = Article::orderBy('created_at', 'desc')->paginate(8);
+        $articles = Article::with('categories')->
+        where('isActive',true)
+            ->orderBy('created_at', 'desc')->paginate(8);
         return view('homepage',compact('articles'));
 
     }
@@ -22,7 +24,6 @@ class ArticleController extends Controller
     {
         $articles = Article::orderBy('created_at', 'desc')->paginate(8);
        // $articles = Article::paginate(8);
-
         return view('articles.all',compact('articles'));
 
     }
@@ -54,9 +55,8 @@ class ArticleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($category,$id,$slug)
+    public function show($date,$id,$slug)
     {
-
         $article = Article::find($id);
         $article->views++;
         $article->save();

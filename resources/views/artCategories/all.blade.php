@@ -10,39 +10,49 @@
     <meta property="og:description" content="{{$category->description}}">
     <meta property="og:image"       content="{{$category->imageurl}}" />
 @endsection
-@section('title','Статии, Новини И Анализи')
+@section('title')
+    Последно в {{$category->name}}
+@endsection
 @section('content')
     <div class="col-lg-8">
-        @foreach($articles as $article)
-            <div class="ribbon-wrapper card">
-                <div class="ribbon ribbon-bookmark  ribbon-warning">{{$article->created_at}}</div>
-                <a href="/articles/{{$article->category->slug}}/{{$article->id}}/{{$article->slug}}"><h3
-                            class="font-weight-bold">{{$article->title}}</h3></a>
+        @foreach($category->articles as $article)
 
-                <div class="m-t-20 row">
-                    <div class="col-md-3 col-xs-12"><img src="{{$article->imageurl}}" alt="Статия Изображение"
-                                                         class="img-responsive
-                        radius"
-                        /></div>
-                    <div class="col-md-9 col-xs-12">
-                        <p>{{ str_limit(strip_tags($article->body), 150)}}</p>
-                        <hr>
-                        <a href="/articles/{{$article->category->slug}}/{{$article->id}}/{{$article->slug}}"
-                           class="btn
-                            btn-success"> Повече..
-                            .</a></div>
-                </div>
-                <div class="col-lg-12">
-                    <div class="like-comm">
-                        {{-- <a href="javascript:void(0)" class="link m-r-10">2 Коментара</a> --}}
-                        <a href="javascript:void(0)" class="link m-r-10"> <i class="fa fa-eye
-                                text-primary"></i> {{$article->views}}</a>
-                        <a href="/articles/{{$article->category->slug}}"><i class="fa fa-tag
-                                text-primary"></i> {{$article->category->name}}</a>
-                    </div>
+            <div></div>
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">
+                        <a href="/articles/{{$article->created_at->
+                            format('ymd')}}/{{$article->id}}/{{$article->slug}}">{{$article->title}}</a></h4>
+                    <p class="text-left small font-weight-italic">
+                        {{$article->created_at->diffForHumans()}}
+                        | на {{$article->created_at->format('d')}} {{$article->bgmonth}}
+                        {{$article->created_at->format('Y')}}г.
+                        <div class="m-t-20 row">
+                            <div class="col-md-3 col-xs-12"><img src="{{$article->imageurl}}" alt="Статия Изображение" class="img-responsive
+                        radius"/></div>
+                            <div class="col-md-9 col-xs-12">
+                    <p>{{str_limit(strip_tags($article->body), 200)}}</p>
+                    <hr>
                 </div>
             </div>
-        @endforeach
+            </p>
+            <div class="col-lg-12">
+                <div class="like-comm small">
+                    {{-- <a href="javascript:void(0)" class="link m-r-10">2 Коментара</a> --}}
+                    <a href="javascript:void(0)" class="link m-r-10"> <i class="fa fa-eye
+                                text-themecolor"></i> {{$article->views}}</a>
+                    <i class="fa fa-folder-open-o
+                                text-themecolor"></i>
+                    @foreach($article->categories as $category)
+                        <a href="/articles/{{$category->id}}/{{$category->slug}}">{{$category->name}}</a>,
+                    @endforeach
+                </div>
+            </div>
+    </div>
+    </div>
+
+
+    @endforeach
     </div>
 @endsection
 

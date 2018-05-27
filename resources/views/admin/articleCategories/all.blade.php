@@ -1,6 +1,12 @@
 @extends('layouts.adminlayout')
 @section('content')
+
     <div class="card-box">
+        @if(session()->has('message'))
+            <div class="alert alert-success">
+                {{ session()->get('message') }}
+            </div>
+        @endif
         <h4 class="header-title mb-4">Категории</h4>
         <div class="row">
             <a href="/admin/articles/categories/create" class="btn

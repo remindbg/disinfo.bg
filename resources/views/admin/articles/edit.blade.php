@@ -1,4 +1,10 @@
 @extends('layouts.adminlayout')
+@section('meta')
+
+
+@endsection
+
+
 @section('content')
 
     <!-- Start Page content -->
@@ -9,7 +15,7 @@
             @if(\Session::has('message'))
                 <div class="alert alert-success">
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span> </button>
+                        <span aria-hidden="true">&times;</span></button>
                     {{\Session::get('message')}}
                 </div>
 
@@ -21,15 +27,14 @@
                             <li>{{ $error }}</li>
                         @endforeach
                     </ul>
-                </div><br />
+                </div><br/>
             @endif
         </div>
         <div class="row">
             <div class="col-lg-12">
                 <form class="form-horizontal" role="form" method="POST"
-                      action="/admin/articles/update/{{$article->id}}/
-                ">
-                    <input type="hidden" value="{{csrf_token()}}" name="_token" />
+                      action="/admin/articles/update/{{$article->id}}/">
+                    <input type="hidden" value="{{csrf_token()}}" name="_token"/>
                     <div class="form-group row">
                         <label class="col-2 col-form-label">Заглавие</label>
                         <div class="col-10">
@@ -49,20 +54,58 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-2 col-form-label">Етикети</label>
-                        <div class="col-10">
-                            <input type="text" class="form-control" value="" name="{{$article->tags}}">
+                        <label class="col-form-label cat">Категории</label>
+                        <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="custom-control custom-checkbox">
+                                        <input type="checkbox" name="isActive" value=""
+                                               name="isactive" class="custom-control-input"
+                                               @if($article->isActive) checked="checked">
+                                        @endif
+                                        <span class="custom-control-indicator"></span>
+                                        <span class="custom-control-description">активна</span>
+                                    </label>
+                                </div>
+
+                            <div class="form-check">
+
+                                @foreach($allcategories as $category)
+
+                                @if(!$article->categories->contains($category->id))
+                                        <label class="custom-control custom-checkbox">
+                                            <input type="checkbox" value="{{$category->id}}"
+                                                   name="selectCat[]"
+                                                   class="custom-control-input">
+                                            <span class="custom-control-indicator"></span>
+                                            <span class="custom-control-description">{{$category->name}}</span>
+                                        </label>
+                                @else
+                                        <label class="custom-control custom-checkbox">
+                                            <input type="checkbox" checked value="{{$category->id}}"
+                                                   name="selectCat[]"
+                                                   class="custom-control-input">
+                                            <span class="custom-control-indicator"></span>
+                                            <span class="custom-control-description">{{$category->name}}</span>
+                                        </label>
+                                @endif
+                                @endforeach
+                            </div>
+                            </p>
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-2 col-form-label">Категория</label>
+                        <label class="col-2 col-form-label">Тагове </label>
                         <div class="col-10">
-                            <select class="selectpicker" name="category_id" data-style="form-control btn-secondary">
-                                @foreach($categories as $category)
-                                    <option value="{{$category->id}}">{{$category->name}}</option>
+                            <input type="text" class="form-control" value="" name="tags">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-2 col-form-label">Дата </label>
+                        <div class="col-10">
 
-                                @endforeach
-                            </select>
+                            <input type="text" class="form-control" value=" {{$article->created_at->format
+                            ('Y г.  m месец и d ден в  Hч.  m минути и s секунди')}}" name="date">
+
                         </div>
                     </div>
                     <div class="form-group row">
@@ -81,25 +124,24 @@
 @endsection
 
 @section('scripts')
-
     <script>
-        $(document).ready(function() {
 
-            if ($("textarea").length > 0) {
-                tinymce.init({
-                    selector: "textarea",
-                    theme: "modern",
-                    height: 300,
-                    plugins: [
-                        "advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker",
-                        "searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",
-                        "save table contextmenu directionality emoticons template paste textcolor"
-                    ],
-                    toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | l      ink image | print preview media fullpage | forecolor backcolor emoticons",
+        if ($("textarea").length > 0) {
+            tinymce.init({
+                selector: "textarea",
+                theme: "modern",
+                height: 300,
+                plugins: [
+                    "advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker",
+                    "searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",
+                    "save table contextmenu directionality emoticons template paste textcolor"
+                ],
+                toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | l      ink image | print preview media fullpage | forecolor backcolor emoticons",
 
-                });
-            }
-        });
+            });
+        };
+
+
     </script>
 
 @endsection

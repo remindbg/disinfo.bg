@@ -1,9 +1,8 @@
 @extends('layouts.adminlayout')
 @section('content')
-
     <!-- Start Page content -->
     <div class="card-box">
-        <h4 class="header-title mb-4">Категории</h4>
+        <h4 class="header-title mb-4">Статии</h4>
         @if(\Session::has('success'))
             <div class="alert alert-success">
                 {{\Session::get('success')}}
@@ -41,19 +40,30 @@
                             <input type="text" class="form-control" value="" name="imageurl">
                         </div>
                     </div>
-                    <div class="form-group row">
-                        <input type="text" id="tags" name="tags" value="Amsterdam,Washington,Sydney,Beijing,Cairo"
-                               data-role="tagsinput" />
-                    </div>
+
+                        <div class="form-group row">
+                            <label class="col-2 col-form-label">Тагове </label>
+                            <div class="col-10">
+                                <input type="text" class="form-control" value="" name="tags">
+                            </div>
+                        </div>
+
                     <div class="form-group row">
                         <label class="col-2 col-form-label">Категория</label>
                         <div class="col-10">
-                            <select class="selectpicker" name="category_id" data-style="form-control btn-secondary">
-                                @foreach($categories as $category)
-                                    <option value="{{$category->id}}">{{$category->name}}</option>
+                            <div class="form-check">
+
+                                @foreach($cats as $category)
+                                        <label class="custom-control custom-checkbox">
+                                            <input type="checkbox" value="{{$category->id}}"
+                                                   name="selectCat[]"
+                                                   class="custom-control-input">
+                                            <span class="custom-control-indicator"></span>
+                                            <span class="custom-control-description">{{$category->name}}</span>
+                                        </label>
 
                                 @endforeach
-                            </select>
+                            </div>
                         </div>
                     </div>
                     <div class="form-group row">

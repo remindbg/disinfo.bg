@@ -5,7 +5,8 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Article;
-use App\Category;
+use App\Categories;
+
 class ArticleController extends Controller
 {
 
@@ -22,9 +23,11 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        $articles = Article::orderBy('created_at', 'desc')->paginate(8);
+        $articles = Article::with('categories')
+            ->orderBy('created_at', 'desc')
+            ->paginate(8);
 
-        // dd($articles);
+
 
         return view('admin.articles.all',['articles' => $articles]);
 
@@ -37,8 +40,9 @@ class ArticleController extends Controller
      */
     public function create()
     {
-        $categories = Category::all();
-        return view('admin.articles.create',['categories' =>$categories]);
+
+        $cats = Categories::all();
+        return view('admin.articles.create',compact('cats'));
     }
 
     /**
@@ -50,28 +54,26 @@ class ArticleController extends Controller
     public function store(Request $request)
     {
         $article = new Article();
-       // dd($request);
+
         $data = $this->validate($request, [
             'title'=>'required',
             'imageurl' => 'required',
             'slug'=> 'required',
             'body' => 'required',
-            'category_id' => 'required',
+            'selectCat' => 'required'
+          //  'category_id' => 'required',
         ]);
-        $article->saveArticle($data);
+
+        $article->title = $data['title'];
+        $article->slug = $data['slug'];
+        $article->imageurl = $data['imageurl'];
+        $article->body = $data['body'];
+        $article->category_id = 1;
+        $article->save();
+        $article->categories()->attach($data['selectCat']);
+        $article->isActive = false;
         return redirect('/admin/articles/all')
             ->with('success','Успешно');
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
     }
 
     /**
@@ -82,11 +84,11 @@ class ArticleController extends Controller
      */
     public function edit($id)
     {
-        $categories = Category::all();
-        $article = Article::find($id);
-        return view('admin.articles.edit',[
-            'article' => $article,
-            'categories' => $categories]);
+        $allcategories = Categories::with('articles')->get();
+        $article = Article::with('categories')->findOrFail($id);
+       // dd($article->categories());
+        return view('admin.articles.edit',compact
+        ('article','allcategories'));
     }
 
     /**
@@ -99,16 +101,21 @@ class ArticleController extends Controller
     public function update(Request $request, $id)
     {
         $article = Article::find($id);
-
+       // dd($request['date']);
         $article->title = $request->title;
-        $article->category_id = $request->category_id;
+        $article->category_id = 1;
         $article->body = $request->body;
         $article->imageurl = $request->imageurl;
         $article->slug = $request->slug;
+        $article->categories()->sync($request->selectCat);
+        $request['date'] =
+        $article->created_at =
+            \Carbon\Carbon::createFromFormat
+            ('Y г.  m месец и d ден в  Hч.  m минути и s секунди',
+                $request['date']);
+        $article->isActive = $request->has('isActive');
         $article->save();
         $data['id'] = $id;
-
-       // $article->updateArticle($data);
         return redirect()->back()->with('message', 'Успешно');
     }
 
@@ -120,7 +127,10 @@ class ArticleController extends Controller
      */
     public function destroy($id)
     {
-        Article::destroy($id);
+        $article = Article::find($id);
+        $article->categories()->detach();
+        $article->delete();
+
         return redirect()->route('allAdminArticles')->with('message', 'Успешно Изтрита Статия');
 
     }

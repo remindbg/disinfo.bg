@@ -1,9 +1,5 @@
-@include('_partials/topnav')
-<!-- End Topbar header -->
-
 @include('_partials/admintopmenu');
 
-<!-- Page wrapper  -->
 <div class="page-wrapper">
 
     <!-- Container fluid  -->
@@ -27,9 +23,7 @@
                                 <small>Версия 1.0.1 *beta*</small>
                             </h6>
                         </div>
-
                     </div>
-
                     <div class="">
                         <button class="right-side-toggle waves-effect waves-light btn-success btn btn-circle btn-sm pull-right m-l-10">
                             <i class="ti-settings text-white"></i>
@@ -39,13 +33,6 @@
             </div>
 
         </div>
-        <!-- ============================================================== -->
-        <!-- End Bread crumb and right sidebar toggle -->
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        <!-- Start Page Content -->
-        <!-- ============================================================== -->
-        <!-- Row -->
         <div class="row">
 
             <div class="col-md-12 col-xlg-12">
@@ -261,11 +248,10 @@
 <!-- Chart JS -->
 <script src="{{ URL::asset('js/dashboard6.js') }}
         "></script>
-<!-- ============================================================== -->
-<!-- Style switcher -->
-<!-- ============================================================== -->
+
 <script src="{{ URL::asset('assets/plugins/styleswitcher/jQuery.style.switcher.js') }}
         "></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
 
 @yield('scripts')
 </body>
