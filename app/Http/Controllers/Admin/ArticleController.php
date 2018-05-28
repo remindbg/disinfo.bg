@@ -68,11 +68,11 @@ class ArticleController extends Controller
         $article->slug = $data['slug'];
         $article->imageurl = $data['imageurl'];
         $article->body = $data['body'];
-        $article->category_id = 1;
+        //$article->category_id = 1;
         $article->save();
         $article->categories()->attach($data['selectCat']);
         $article->isActive = false;
-        return redirect('/admin/articles/all')
+        return redirect('/admin/articles')
             ->with('success','Успешно');
     }
 
@@ -103,7 +103,6 @@ class ArticleController extends Controller
         $article = Article::find($id);
        // dd($request['date']);
         $article->title = $request->title;
-        $article->category_id = 1;
         $article->body = $request->body;
         $article->imageurl = $request->imageurl;
         $article->slug = $request->slug;

@@ -16,10 +16,16 @@ class Article extends Model
             'category_id');
     }
 
-    public function saveArticle($data) {
-
+    public function scopeActive($query)
+    {
+        return $query->where('isActive', true);
     }
 
+    public function articlesIsActive()
+    {
+
+        return $this->articles()->published();
+    }
 
     public function getBgMonthAttribute($date) //
     {

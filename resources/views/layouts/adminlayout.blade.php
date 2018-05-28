@@ -20,7 +20,7 @@
                     <div class="d-flex m-r-20 m-l-10 hidden-md-down">
                         <div class="chart-text m-r-10">
                             <h6 class="m-b-0">
-                                <small>Версия 1.0.1 *beta*</small>
+                                <small>Версия 1.1.0 *beta*</small>
                             </h6>
                         </div>
                     </div>

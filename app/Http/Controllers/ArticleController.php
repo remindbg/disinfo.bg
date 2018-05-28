@@ -22,7 +22,7 @@ class ArticleController extends Controller
     }
     public function index()
     {
-        $articles = Article::orderBy('created_at', 'desc')->paginate(8);
+        $articles = Article::orderBy('created_at', 'desc')->where('isActive', true)->paginate(8);
        // $articles = Article::paginate(8);
         return view('articles.all',compact('articles'));
 
@@ -57,7 +57,7 @@ class ArticleController extends Controller
      */
     public function show($date,$id,$slug)
     {
-        $article = Article::find($id);
+        $article = Article::findOrFail($id);
         $article->views++;
         $article->save();
         return view('articles.single',compact('article'));

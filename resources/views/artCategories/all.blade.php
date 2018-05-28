@@ -15,7 +15,7 @@
 @endsection
 @section('content')
     <div class="col-lg-8">
-        @foreach($category->articles as $article)
+        @foreach($articles as $article)
 
             <div></div>
             <div class="card">

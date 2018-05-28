@@ -19,7 +19,7 @@ class AppServiceProvider extends ServiceProvider
         Carbon::setLocale('BG');
         Schema::defaultStringLength(191);
         View::composer('_partials.defSidebar', function($view){
-           $articles = Article::orderBy('created_at','desc')->take(9)->get();
+           $articles = Article::orderBy('created_at','desc')->where('isActive',true)->take(9)->get();
             //$categories = Category::all();
             $allcats = Categories::with('articles')->get();
             $view->with(compact('articles','allcats')) ;

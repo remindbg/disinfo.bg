@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Categories;
-use App\Articles;
+use App\Article;
+use function foo\func;
 use Illuminate\Http\Request;
 
 class CategoriesController extends Controller
@@ -27,9 +28,14 @@ class CategoriesController extends Controller
      */
     public function show(Categories $categories, $id, $slug)
     {
-       $category = Categories::with('articles')->find($id);
+       $category = Categories::find($id);
+       $cats = Categories::find($id);
+       $articles = $cats->articles()->active()->get();
 
-       return view('artCategories.all',compact('category'));
+
+
+
+       return view('artCategories.all',compact('articles','category'));
 
     }
 

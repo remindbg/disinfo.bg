@@ -48,10 +48,10 @@
     <header class="topbar">
         <nav class="navbar top-navbar navbar-expand-md navbar-light">
             <div class="navbar-header">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="">
                     <!-- Logo icon -->
                     <b>
-                       <i class="wi wi-sunset"></i>
+                       <i class="wi wi-earthquake"></i>
                     </b>
 
                 </a>

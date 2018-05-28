@@ -29,7 +29,7 @@
                     @foreach($allcats as $category)
                         <tr>
                             <td><a href="/articles/{{$category->id}}/{{$category->slug}}">{{$category->name}}</a></td>
-                            <td class="text-right"><span class="label label-light-info">{{$category->articles()->count()
+                            <td class="text-right"><span class="label label-light-info">{{$category->articles()->active()->count()
                         }}</span></td>
                         </tr>
                     @endforeach
