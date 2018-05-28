@@ -33,7 +33,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <form class="form-horizontal" role="form" method="POST"
-                      action="/admin/articles/update/{{$article->id}}/">
+                      action="/admin/articles/edit/{{$article->id}}/">
                     <input type="hidden" value="{{csrf_token()}}" name="_token"/>
                     <div class="form-group row">
                         <label class="col-2 col-form-label">Заглавие</label>
