@@ -52,7 +52,7 @@ class CategoriesController extends Controller
         $categories->metaimage = $request->metaimage;
         $categories->metadescr = $request->metadescr;
         $categories->save();
-        return redirect('/admin/categories/all')
+        return redirect('/admin/categories')
             ->with('success','Успешно Създаване на категорията');
     }
 

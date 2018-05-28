@@ -41,13 +41,14 @@ Route::get('/articles/{id}/{slug}','CategoriesController@show');
 
 
 Route::get('/admin/articles/create', 'Admin\ArticleController@create')->name('adminCreateArticle');
-Route::post('/admin/articles/store', 'Admin\ArticleController@store')->name('adminStoreArticle');
+Route::post('/admin/articles/store', 'Admin\ArticleController@store')->name('adminStoreArticle'); // new
 Route::get('/admin/articles/edit/{id}','Admin\ArticleController@edit');
-Route::post('/admin/articles/update/{id}','Admin\ArticleController@update');
+Route::post('/admin/articles/edit/{id}', 'Admin\ArticleController@update')->name('adminCreateUpdate');
+
+//Route::post('/admin/articles/update/{id}','Admin\ArticleController@update');
 // cats
 Route::get('/admin/articles', 'Admin\ArticleController@index')->name('allAdminArticles');
 Route::get('/admin/articles/edit/{id}', 'Admin\ArticleController@edit')->name('adminCreateEdit');
-Route::post('/admin/articles/edit/{id}', 'Admin\ArticleController@update')->name('adminCreateUpdate');
 Route::delete('/admin/articles/delete/{id}', 'Admin\ArticleController@destroy')->name('adminArticlesDestroy');
 
 
