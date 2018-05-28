@@ -115,7 +115,7 @@ class ArticleController extends Controller
         $article->isActive = $request->has('isActive');
         $article->save();
         $data['id'] = $id;
-        return redirect()->back()->with('message', 'Успешно');
+        return redirect()->route('allAdminArticles')->with('message', 'Успешно');
     }
 
     /**
