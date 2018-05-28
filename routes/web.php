@@ -48,7 +48,6 @@ Route::post('/admin/articles/edit/{id}', 'Admin\ArticleController@update')->name
 //Route::post('/admin/articles/update/{id}','Admin\ArticleController@update');
 // cats
 Route::get('/admin/articles', 'Admin\ArticleController@index')->name('allAdminArticles');
-Route::get('/admin/articles/edit/{id}', 'Admin\ArticleController@edit')->name('adminCreateEdit');
 Route::delete('/admin/articles/delete/{id}', 'Admin\ArticleController@destroy')->name('adminArticlesDestroy');
 
 
