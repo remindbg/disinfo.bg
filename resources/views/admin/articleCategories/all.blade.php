@@ -34,11 +34,14 @@
                                 <td>{{$category->created_at}}</td>
                                 <td>{{$category->articles->count()}}</td>
                                 <td class="text-nowrap">
-                                    <a href="/admin/articles/categories/edit/{{$category->id}}" data-toggle="tooltip"
-                                       data-original-title="Edit">
-                                        <i class="fa
+                                    <div class="btn btn-warning"> <a href="/admin/articles/categories/edit/{{$category->id}}"><i class="fa
                                 fa-pencil
-                                text-inverse m-r-10"></i> </a>
+                                text-inverse m-r-10"></i>Edit </a></div>
+                                    <form method="POST" action="/admin/articles/categories/delete/{{$category->id}}">
+                                        {{ method_field('DELETE') }}
+                                        {{ csrf_field() }}
+                                        <button type="submit" onclick="return confirm('Are you sure?')" class="btn btn-red">Изтрий</button>
+                                    </form>
                                 </td>
                             </tr>
                         @endforeach

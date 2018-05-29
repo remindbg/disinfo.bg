@@ -61,3 +61,4 @@ Route::get('/admin/articles/categories/create', 'Admin\CategoriesController@crea
 Route::get('/admin/articles/categories/edit/{id}','Admin\CategoriesController@edit');
 Route::post('/admin/articles/categories/create', 'Admin\CategoriesController@store');
 Route::post('/admin/articles/categories/update/{id}/','Admin\CategoriesController@update')->name('updateCategories');
+Route::delete('/admin/articles/categories/delete/{id}', 'Admin\CategoriesController@destroy');

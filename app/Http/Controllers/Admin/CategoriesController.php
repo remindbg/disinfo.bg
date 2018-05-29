@@ -87,9 +87,17 @@ class CategoriesController extends Controller
      * @param  \App\Categories  $categories
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Categories $categories)
+    public function update(Request $request, $id)
     {
-        //
+        $category = Categories::findOrFail($id);
+        $category->name = $request->name;
+        $category->slug = $request->slug;
+        $category->metadescr = $request->description;
+        $category->metaimage = $request->imageurl;
+        $category->save();
+        return redirect('/admin/articles/categories')->with('message', 'Успешно Редактиране');
+
+
     }
 
     /**
@@ -98,8 +106,13 @@ class CategoriesController extends Controller
      * @param  \App\Categories  $categories
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Categories $categories)
+    public function destroy($id)
     {
-        //
+        $category = Categories::find($id);
+       
+
+        $category->delete();
+
+        return redirect('/admin/articles/categories/')->with('message', 'Успешно Изтрита Категория');
     }
 }
