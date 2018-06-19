@@ -48,7 +48,7 @@ Route::get('/articles/{id}/{slug}','CategoriesController@show');
 
 
 Route::get('/admin/articles/{id}/sources/create','Admin\SourceController@create');
-Route::post('/admin/articles/{id}/sources/store', 'Admin\SourceController@store');
+Route::post('/admin/articles/sources/store', 'Admin\SourceController@store');
 
 Route::get('/admin/articles/create', 'Admin\ArticleController@create')->name('adminCreateArticle');
 Route::post('/admin/articles/store', 'Admin\ArticleController@store')->name('adminStoreArticle'); // new

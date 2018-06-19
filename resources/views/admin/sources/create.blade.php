@@ -29,7 +29,7 @@
             <div class="col-lg-12">
 
                 <form class="form-horizontal" role="form" method="POST"
-                      action="/admin/articles/{{$article->id}}/sources/store/">
+                      action="/admin/articles/sources/store">
 
                     <input type="hidden" value="{{csrf_token()}}" name="_token" />
                     <div class="form-group row">

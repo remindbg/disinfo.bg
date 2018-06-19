@@ -43,17 +43,18 @@ class SourceController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request,$id)
+    public function store(Request $request)
     {
         $this->validate($request,array(
             'name' => 'required',
             'url' => 'required',
+            'article_id' => 'required'
 
         ));
         $source = new Source();
         $source->name = $request->name;
         $source->url = $request->url;
-        $source->article_id = $id;
+        $source->article_id = $request->article_id;
         $source->save();
         return redirect('/admin/articles/')
             ->with('success','Успешно Добавяне На Източник');
