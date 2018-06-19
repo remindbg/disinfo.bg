@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Article;
+use App\Sources;
 class ArticleController extends Controller
 {
     /**
@@ -18,9 +19,10 @@ class ArticleController extends Controller
 
     public function homepage() // just a quick fix ! TODO
     {
-        $articles = Article::with('categories')->
+        $articles = Article::with('categories','sources','tags')->
         where('isActive',true)
             ->orderBy('created_at', 'desc')->paginate(8);
+
         return view('desinfo.all',compact('articles'));
 
     }
@@ -28,6 +30,7 @@ class ArticleController extends Controller
     {
         $articles = Article::orderBy('created_at', 'desc')->where('isActive', true)->paginate(8);
        // $articles = Article::paginate(8);
+
         return view('articles.all',compact('articles'));
 
     }
@@ -62,6 +65,7 @@ class ArticleController extends Controller
     public function show($date,$id,$slug)
     {
         $article = Article::findOrFail($id);
+
         $article->views++;
         $article->save();
         return view('articles.single',compact('article'));

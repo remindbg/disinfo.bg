@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Categories;
 use App\Article;
-use function foo\func;
 use Illuminate\Http\Request;
+use function PHPSTORM_META\type;
 
 class CategoriesController extends Controller
 {
@@ -27,15 +27,20 @@ class CategoriesController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show(Categories $categories, $id, $slug)
+
     {
-       $category = Categories::find($id);
-       $cats = Categories::find($id);
-       $articles = $cats->articles()->active()->get();
+       $category = Categories::find($id)->with('articles','articles.tags','articles.sources')->first();
+        $articles = $category->articles->sortBy(function($query)
+        {
+            return $query->created_at;
+        })->reverse();
 
 
 
 
-       return view('artCategories.all',compact('articles','category'));
+
+
+       return view('artCategories.all',compact('category','articles'));
 
     }
 

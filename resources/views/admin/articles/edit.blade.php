@@ -59,16 +59,14 @@
                     <div class="form-group row">
                         <label class="col-form-label cat">Активна?</label>
                         <div class="col-md-12">
-                                <div class="form-group">
-                                    <label class="custom-control custom-checkbox">
-                                        <input type="checkbox" name="isActive" value=""
-                                               name="isactive" class="custom-control-input"
-                                               @if($article->isActive) checked="checked">
-                                        @endif
-                                        <span class="custom-control-indicator"></span>
-                                        <span class="custom-control-description">активна</span>
-                                    </label>
-                                </div>
+                            <div class="form-group">
+                                <label for="sel1"></label>
+                                <select class="form-control" name="isActive" id="sel1">
+
+                                    <option value="1" @if($article->isActive) selected @endif>Да</option>
+                                    <option value="0" @if($article->isActive == false) selected @endif >Не</option>
+                                </select>
+                            </div>
                             <div class="form-group row">
                                 <label class="col-2 col-form-label">Тип :  </label>
                                 <div class="col-10">

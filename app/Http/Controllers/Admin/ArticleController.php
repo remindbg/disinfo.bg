@@ -144,7 +144,7 @@ class ArticleController extends Controller
             \Carbon\Carbon::createFromFormat
             ('Y г.  m месец и d ден в  Hч.  m минути и s секунди',
                 $request['date']);
-        $article->isActive = $request->has('isActive');
+        $article->isActive = $request['isActive'];
         $tags = $request['tags'];
         $tags = explode(',', $tags);
         $tagIds = [];

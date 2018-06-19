@@ -32,11 +32,12 @@
                 <hr>
                 <div class="m-t-20 row">
                     <div class="col-md-12 col-xs-12">
+                        @if($article->articleType == 1)
                         <div class="card card-inverse" style="background-color: #333; border-color: #333;">
                             <div class="card-body">
                                 <h5 class="card-title"><i class="ti-info-alt"></i> Обобщение на Дезинформацията</h5>
                                 <p class="card-text">
-                                    В статията публикувана преди няколко месеца се показват снимки на черепи, които се представят като доказателства, че съществуват извънземни и древни човеци гиганти
+                                    {{$article->summary_desinfo}}
                                 </p>
 
                             </div>
@@ -44,20 +45,21 @@
                         <div class="card">
                             <div class="card-body">
                                 <h5 class="card-title text-center"><i class="ti-check"></i> Заключение</h5>
-                                <p class="card-text "><h3 class="text-center">Фалшива Новина</h3></p>
+                                <p class="card-text "><h3 class="text-center">{{$article->desinfo_conclusion}}</h3></p>
                                 <hr>
                                 <p class="small text-center">Допълнителна Информация</p>
-                                <p class="small">Свързани Източници / Медии : 5 </p>
-                                <p class="small">Дата на дезинформацията: 2018.06.12</p>
-                                <p class="small">Засегнати Страни: България</p>
-                                <p class="small">Източник на дезинформацията: България</p>
+                                <p class="small">Свързани Източници / Медии : {{$article->sources->count()}} <a href="#sources">към източниците</a> </p>
+                                <p class="small">Дата на дезинформацията: {{$article->desinfo_date}}</p>
+                                <p class="small">Засегнати Страни: {{$article->affected_country}}</p>
+                                <p class="small">Източник на дезинформацията: {{$article->desinfo_started}}</p>
                                 <p class="small muted">Семантичен Анализ на дезинформацията: Очаквайте скоро!</p>
 
 
                             </div>
                         </div>
-                        <h2 class="font-weight-bold">{{$article->title}}</h2>
 
+                        <h2 class="font-weight-bold">{{$article->title}}</h2>
+                        @endif
                         <div class="">
                             <img src="{{$article->imageurl}}" alt="Статия Изображение"
                                  class="article-featured-image float-left"
@@ -68,8 +70,43 @@
 
                             {!!$article->body!!}
                         </div>
+                            <hr>
+                        Етикети:
+                            @foreach($article->tags as $tag)
+                                <a href="#">{{$tag->name}}</a>,
+                            @endforeach
                     </div>
                 </div>
+                    @if($article->articleType == 1)
+
+                    <div id="#sources" class="text-center">
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th class="text-center">Номер</th>
+                                <th>Име</th>
+                                <th class="text-center">Дата</th>
+                                <th class="text-center">Адрес</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @foreach($article->sources as $source)
+                                <tr>
+                                    <td class="text-center">{{$source->id}}</td>
+                                    <td>{{$source->name}}</td>
+                                    <td class="text-right">{{$source->created_at->diffForHumans()}}</td>
+                                    <td class="text-right">
+                                        <a href="{{$source->url}}" target="_blank" rel="nofollow"><button type="button" class="btn btn-block btn-outline-danger">Посещаване</button></a>
+                                    </td>
+                                </tr>
+                            @endforeach
+                            </tbody>
+                        </table>
+
+                    </div>
+
+                    @endif
+
              </p>
             <div class="col-lg-12">
                 <div class="like-comm small">
@@ -81,6 +118,7 @@
                     @foreach($article->categories as $category)
                         <a href="/articles/{{$category->id}}/{{$category->slug}}">{{$category->name}}</a>,
                     @endforeach
+
                 </div>
             </div>
             </div>
@@ -88,6 +126,7 @@
         <div class="card" id="comments">
             <div class="card-body">
                 <h4 class="card-title">Коментари</h4>
+                <hr>
                 <h6 class="card-subtitle">Очаквайте Скоро</h6> </div>
 
         </div>
