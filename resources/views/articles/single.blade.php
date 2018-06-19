@@ -9,7 +9,7 @@
     <meta property="og:type"        content="website"/>
     <meta property="og:title"       content="{{$article->title}}" />
     <meta property="og:description" content="{{$article->title}}- desinfo.Info - Бъдете информирани ">
-    <meta property="og:image" content="{{$article->imageurl}}')}}">
+    <meta property="og:image" content="{{$article->imageurl}}">
 @endsection
 @section('content')
     <div class="col-lg-8">
