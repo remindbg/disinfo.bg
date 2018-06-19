@@ -10,6 +10,11 @@ class Article extends Model
     protected $guarded = [];
     protected $dates = [ 'created_at' ,'updated_at' ];
 
+
+
+    public function sources() {
+        return $this->hasMany(Source::class);
+    }
     public function tags() {
         return $this->belongsToMany('App\Tag','article_tag','article_id','tag_id');
     }

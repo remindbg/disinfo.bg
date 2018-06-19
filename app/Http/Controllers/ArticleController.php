@@ -12,6 +12,10 @@ class ArticleController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+
+
+
     public function homepage() // just a quick fix ! TODO
     {
         $articles = Article::with('categories')->

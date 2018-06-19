@@ -9,7 +9,7 @@
 
     <!-- Start Page content -->
     <div class="card-box">
-        <h4 class="header-title mb-4">Категории</h4>
+        <h4 class="header-title mb-4">Редакция на Публикация</h4>
 
         <div class="col-lg-12">
             @if(\Session::has('message'))
@@ -32,6 +32,9 @@
         </div>
         <div class="row">
             <div class="col-lg-12">
+                @if($article->articleType == 1)
+                <div class="btn btn-primary"><a href="/admin/articles/{{$article->id}}/sources/create">Добавяне на Източник</a></div>
+                @endif
                 <form class="form-horizontal" role="form" method="POST"
                       action="/admin/articles/update/{{$article->id}}">
                     <input type="hidden" value="{{csrf_token()}}" name="_token"/>
@@ -54,7 +57,7 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-form-label cat">Категории</label>
+                        <label class="col-form-label cat">Активна?</label>
                         <div class="col-md-12">
                                 <div class="form-group">
                                     <label class="custom-control custom-checkbox">
@@ -66,10 +69,24 @@
                                         <span class="custom-control-description">активна</span>
                                     </label>
                                 </div>
+                            <div class="form-group row">
+                                <label class="col-2 col-form-label">Тип :  </label>
+                                <div class="col-10">
+                                    <div class="form-group">
+                                        <label for="sel1"></label>
+                                        <select class="form-control" name="articleType" id="sel1">
+
+                                            <option value="1" @if($article->articleType == 1) selected @endif>Дезинформация</option>
+                                            <option value="2" @if($article->articleType == 2) selected @endif >Блог</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
 
                             <div class="form-check">
+                                <label class="col-2 col-form-label">Kategoriq :  </label>
 
-                                @foreach($allcategories as $category)
+                            @foreach($allcategories as $category)
 
                                 @if(!$article->categories->contains($category->id))
                                         <label class="custom-control custom-checkbox">

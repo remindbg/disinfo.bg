@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Source;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Article;
@@ -115,8 +116,8 @@ class ArticleController extends Controller
     public function edit($id)
     {
         $allcategories = Categories::with('articles')->get();
-        $article = Article::with('categories')->findOrFail($id);
-       // dd($article->categories());
+
+        $article = Article::with('categories','sources')->findOrFail($id);
 
         return view('admin.articles.edit',compact
         ('article','allcategories'));
@@ -156,6 +157,14 @@ class ArticleController extends Controller
                 $tagIds[] = $tag->id;
             }
         }
+        if($request['articleType'] == 1) {
+            $article->summary_desinfo = $request['summary_desinfo'];
+
+            $article->desinfo_date = $request['desinfo_date'];
+            $article->affected_country = $request['affected_country'];
+            $article->desinfo_started = $request['desinfo_started'];
+            $article->desinfo_conclusion = $request['desinfo_conclusion'];
+        }
         $article->tags()->sync($tagIds);
 
         $article->save();
@@ -174,6 +183,8 @@ class ArticleController extends Controller
     {
         $article = Article::find($id);
         $article->categories()->detach();
+        $article->tags()->detach();
+
         $article->delete();
 
         return redirect()->route('allAdminArticles')->with('message', 'Успешно Изтрита Статия');
