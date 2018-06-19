@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Article;
 use App\Categories;
+use App\Tag;
 
 class ArticleController extends Controller
 {
@@ -56,12 +57,12 @@ class ArticleController extends Controller
         $article = new Article();
 
         $data = $this->validate($request, [
-            'title'=>'required',
+            'title' => 'required',
             'imageurl' => 'required',
-            'slug'=> 'required',
+            'slug' => 'required',
             'body' => 'required',
             'selectCat' => 'required'
-          //  'category_id' => 'required',
+            //  'category_id' => 'required',
         ]);
 
         $article->title = $data['title'];
@@ -69,13 +70,42 @@ class ArticleController extends Controller
         $article->imageurl = $data['imageurl'];
         $article->body = $data['body'];
         //$article->category_id = 1;
+
+        $tags = $request['tags'];
+        $tags = explode(',', $tags);
+        $tagIds = [];
+        foreach ($tags as $tagName) {
+            //$post->tags()->create(['name'=>$tagName]);
+            //Or to take care of avoiding duplication of Tag
+            //you could substitute the above line as
+            $tag = Tag::firstOrCreate(['name' => $tagName]);
+            if ($tag) {
+                $tagIds[] = $tag->id;
+            }
+        }
+        if($request['articleType'] == 1) {
+            $article->articleType = 1;
+        }
+        else {
+            $article->articleType = 2;
+        }
+        if($request['articleType'] == 1) {
+            $article->summary_desinfo = $request['summary_desinfo'];
+            $article->desinfo_date = $request['desinfo_date'];
+            $article->affected_country = $request['affected_country'];
+            $article->desinfo_started = $request['desinfo_started'];
+            $article->desinfo_conclusion = $request['desinfo_conclusion'];
+        }
+
         $article->save();
+        $article->tags()->sync($tagIds);
+
         $article->categories()->attach($data['selectCat']);
         $article->isActive = false;
         return redirect('/admin/articles')
-            ->with('success','Успешно');
-    }
+            ->with('success', 'Успешно');
 
+    }
     /**
      * Show the form for editing the specified resource.
      *
@@ -87,6 +117,7 @@ class ArticleController extends Controller
         $allcategories = Categories::with('articles')->get();
         $article = Article::with('categories')->findOrFail($id);
        // dd($article->categories());
+
         return view('admin.articles.edit',compact
         ('article','allcategories'));
     }
@@ -113,6 +144,20 @@ class ArticleController extends Controller
             ('Y г.  m месец и d ден в  Hч.  m минути и s секунди',
                 $request['date']);
         $article->isActive = $request->has('isActive');
+        $tags = $request['tags'];
+        $tags = explode(',', $tags);
+        $tagIds = [];
+        foreach ($tags as $tagName) {
+            //$post->tags()->create(['name'=>$tagName]);
+            //Or to take care of avoiding duplication of Tag
+            //you could substitute the above line as
+            $tag = Tag::firstOrCreate(['name' => $tagName]);
+            if ($tag) {
+                $tagIds[] = $tag->id;
+            }
+        }
+        $article->tags()->sync($tagIds);
+
         $article->save();
         $data['id'] = $id;
 

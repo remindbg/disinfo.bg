@@ -96,7 +96,7 @@
                     <div class="form-group row">
                         <label class="col-2 col-form-label">Тагове </label>
                         <div class="col-10">
-                            <input type="text" class="form-control" value="" name="tags">
+                            <input type="text" class="form-control" value="@foreach($article->tags as $tag){{$tag->name}},@endforeach "name="tags">
                         </div>
                     </div>
                     <div class="form-group row">
@@ -111,9 +111,41 @@
                     <div class="form-group row">
                         <label class="col-2 col-form-label">Текст</label>
                         <div class="col-10">
-                            <textarea class="form-control" rows="5" name="body">{{$article->body}}</textarea>
+                            <textarea class="form-control body" rows="5" name="body">{{$article->body}}</textarea>
                         </div>
                     </div>
+                    @if($article->articleType == 1)
+                    <div class="form-group row">
+                        <label class="col-2 col-form-label">Обобщение ( ако е дезинформация )</label>
+                        <div class="col-10">
+                            <textarea class="form-control" rows="3" name="summary_desinfo">{{$article->summary_desinfo}}</textarea>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-2 col-form-label">Заключение (много накратко ) </label>
+                        <div class="col-10">
+                            <input type="text" class="form-control" value="{{$article->desinfo_conclusion}}" name="desinfo_conclusion">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-2 col-form-label">Дата на дезинформацията </label>
+                        <div class="col-10">
+                            <input type="text" class="form-control" value="{{$article->desinfo_date}}" name="desinfo_date">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-2 col-form-label">Афектирана Страна/ Страни </label>
+                        <div class="col-10">
+                            <input type="text" class="form-control" value="{{$article->affected_country}}" name="affected_country">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-2 col-form-label">Оригинален Източник ( страна ) </label>
+                        <div class="col-10">
+                            <input type="text" class="form-control" value="{{$article->desinfo_started}}" name="desinfo_started">
+                        </div>
+                    </div>
+                    @endif
                     <button type="submit" class="btn btn-primary">Добави</button>
                 </form>
             </div>
@@ -126,9 +158,9 @@
 @section('scripts')
     <script>
 
-        if ($("textarea").length > 0) {
+        if ($(".body").length > 0) {
             tinymce.init({
-                selector: "textarea",
+                selector: ".body",
                 theme: "modern",
                 height: 300,
                 plugins: [

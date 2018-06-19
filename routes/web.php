@@ -13,6 +13,13 @@
 Auth::routes();
 
 
+
+Route::get('/desinfo', function () {
+
+   return view('desinfo.all');
+});
+
+
 Route::get('/admin', function () {
     return view('layouts.adminlayout');
 })->middleware('auth');;

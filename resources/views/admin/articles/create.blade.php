@@ -40,7 +40,18 @@
                             <input type="text" class="form-control" value="" name="imageurl">
                         </div>
                     </div>
-
+                    <div class="form-group row">
+                        <label class="col-2 col-form-label">Тип :  </label>
+                        <div class="col-10">
+                            <div class="form-group">
+                                <label for="sel1"></label>
+                                <select class="form-control" name="articleType" id="sel1">
+                                    <option value="1">Дезинформация</option>
+                                    <option value="2">Блог</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
                         <div class="form-group row">
                             <label class="col-2 col-form-label">Тагове </label>
                             <div class="col-10">
@@ -69,7 +80,37 @@
                     <div class="form-group row">
                         <label class="col-2 col-form-label">Текст</label>
                         <div class="col-10">
-                            <textarea class="form-control" rows="5" name="body"></textarea>
+                            <textarea class="form-control body" rows="5" name="body"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-2 col-form-label">Обобщение ( ако е дезинформация )</label>
+                        <div class="col-10">
+                            <textarea class="form-control" rows="3" name="summary_desinfo"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-2 col-form-label">Заключение (много накратко ) </label>
+                        <div class="col-10">
+                            <input type="text" class="form-control" value="" name="desinfo_conclusion">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-2 col-form-label">Дата на дезинформацията </label>
+                        <div class="col-10">
+                            <input type="text" class="form-control" value="" name="desinfo_date">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-2 col-form-label">Афектирана Страна/ Страни </label>
+                        <div class="col-10">
+                            <input type="text" class="form-control" value="" name="affected_country">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-2 col-form-label">Оригинален Източник ( страна ) </label>
+                        <div class="col-10">
+                            <input type="text" class="form-control" value="" name="desinfo_started">
                         </div>
                     </div>
                     <button type="submit" class="btn btn-primary">Добави</button>
@@ -90,9 +131,9 @@
 
         $(document).ready(function() {
 
-            if ($("textarea").length > 0) {
+            if ($(".body").length > 0) {
                 tinymce.init({
-                    selector: "textarea",
+                    selector: ".body",
                     theme: "modern",
                     height: 300,
                     plugins: [

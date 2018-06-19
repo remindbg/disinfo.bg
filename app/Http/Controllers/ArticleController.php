@@ -17,7 +17,7 @@ class ArticleController extends Controller
         $articles = Article::with('categories')->
         where('isActive',true)
             ->orderBy('created_at', 'desc')->paginate(8);
-        return view('homepage',compact('articles'));
+        return view('desinfo.all',compact('articles'));
 
     }
     public function index()

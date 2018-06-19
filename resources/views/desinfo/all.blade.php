@@ -1,68 +1,59 @@
 @extends('layouts.front')
 
-@section('title', 'Homepage')
-
+@section('meta')
+    <title>Статии, Новини, Анализи | Desinfo.Info</title>
+    <meta name="title" content="Desinfo.Info - Случаи на Дезинформация в българските медии">
+    <meta name="description" content="Секция Новини, Статии и Анализи - desinfo.info - бъдете информирани">
+    <meta property="og:url"         content="{{url()->current()}}" />
+    <meta property="og:type"        content="website"/>
+    <meta property="og:title"       content="Desinfo.Info - Случаи на Дезинформация в българските медии." />
+    <meta property="og:description" content="Desinfo.Info - Случаи на Дезинформация в българските медии. Статии,
+    Новини, Анализи, Медии в България">
+    <meta property="og:image" content="{{asset('/images/static/homepage.jpg')}}">
+@endsection
+@section('title','Последни случаи на Дезинформация')
 @section('content')
-    <div class="card card-inverse card-primary p-3 text-center">
-        <p> Намерите се в страницата, в която се разглеждат случаи на дезинформация. Подробности за всеки случай,
-            можете да откриете в цялата публикация, както и да докладвате или добавите съдържание.</p>
-    </div>
-    <div class="ribbon-wrapper card">
-        <div class="ribbon ribbon-bookmark  ribbon-warning">21.03.2017</div>
-        <a href="#"><h4 class="font-weight-bold">Подготвя ли се НАТО за война с Русия в близките 2
-                години?</h4></a>
-        <div class="ml-auto">
-            <ul class="list-inline">
-                <small>Етикети:</small>
-                <li>
-                    <a href="">
-                        <h6 class="text-muted text-success">
-                            <i class="fa fa-circle font-10 m-r-10 ">
-                            </i>
-                            България</h6></a>
-                </li>
-                <li>
-                    <a href="">
-                        <h6 class="text-muted text-success">
-                            <i class="fa fa-circle font-10 m-r-10 ">
-                            </i>
-                            България</h6></a>
-                </li>
-            </ul>
-        </div>
-        <div class="row">
-            <div class="col-lg-2">
-                <img class="img-responsive" src="assets/images/users/1.jpg"
-                     alt="user">
-            </div>
-            <div class="col-lg-10">
-                {{-- ТЕКСТ ИНТРО--}}
-                <p class="ribbon-content">В сайта се разглеждат случаи на дезинформация и подвеждаща информация.
-                    В сайта се разглеждат случаи на дезинформация и подвеждаща информация.
-                </p>
-                <hr>
-                <a href="#"><button type="button" class="btn waves-effect waves-light
-                                        btn-outline-success">Подробности...
-                    </button></a>
-            </div>
-            <div class="col-lg-12">
+    <div class="col-lg-8">
+        @foreach($articles as $article)
 
-                <hr>
-                <div class="like-comm">
-                    <a href="javascript:void(0)" class="link m-r-10">2 Коментара</a>
-                    <a href="javascript:void(0)" class="link m-r-10">
-                        <i class="fa fa-thumbs-up text-success"></i> 10</a>
-
-                    <a href="javascript:void(0)" class="link m-r-10"> <i
-                                class="fa fa-heart text-danger"></i> 64</a>
-                    <a href="javascript:void(0)" class="link m-r-10"> <i class="fa fa-eye
-                                            text-primary"></i> 1234</a>
-                    <a href="javascript:void(0)" class="link m-r-10"> <i class="fa fa-eye
-                                            text-primary"></i> 5 Свързани Медии</a>
-
+            <div></div>
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">
+                        <a href="/articles/{{$article->created_at->
+                            format('ymd')}}/{{$article->id}}/{{$article->slug}}">{{$article->title}}</a></h4>
+                    <p class="text-left small font-weight-italic">
+                        {{$article->created_at->diffForHumans()}}
+                        | на {{$article->created_at->format('d')}} {{$article->bgmonth}}
+                        {{$article->created_at->format('Y')}}г.
+                        <div class="m-t-20 row">
+                            <div class="col-md-3 col-xs-12"><img src="{{$article->imageurl}}" alt="Статия Изображение" class="img-responsive
+                        radius"/></div>
+                            <div class="col-md-9 col-xs-12">
+                    <p>{{str_limit(strip_tags($article->body), 255)}}</p>
+                    <p class="small">Тагове: <a href="">#BSP</a>, Politika,#fake</p>
+                    <p class="small">Свързани Медии: <a href="">blitz.bg </a>,<a href="">dnevnik.bg </a>.. и още 3 </p>
+                    <hr>
                 </div>
             </div>
-        </div>
+            </p>
+            <div class="col-lg-12">
+                <div class="like-comm small">
+                    {{-- <a href="javascript:void(0)" class="link m-r-10">2 Коментара</a> --}}
+                    <a href="javascript:void(0)" class="link m-r-10"> <i class="fa fa-eye
+                                text-themecolor"></i> {{$article->views}}</a>
+                    <i class="fa fa-folder-open-o
+                                text-themecolor"></i>
+                    @foreach($article->categories as $category)
+                        <a href="/articles/{{$category->id}}/{{$category->slug}}">{{$category->name}}</a>,
+                    @endforeach
+                </div>
+            </div>
     </div>
+    </div>
+    @endforeach
+    {{$articles->links("pagination::bootstrap-4")}}
+    </div>
+
 @endsection
 

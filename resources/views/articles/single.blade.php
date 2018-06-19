@@ -32,10 +32,42 @@
                 <hr>
                 <div class="m-t-20 row">
                     <div class="col-md-12 col-xs-12">
-                        <img src="{{$article->imageurl}}" alt="Статия Изображение"
-                             class="article-featured-image float-left"
-                        />
-                        <div class="article-text">{!!$article->body!!}</div>
+                        <div class="card card-inverse" style="background-color: #333; border-color: #333;">
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="ti-info-alt"></i> Обобщение на Дезинформацията</h5>
+                                <p class="card-text">
+                                    В статията публикувана преди няколко месеца се показват снимки на черепи, които се представят като доказателства, че съществуват извънземни и древни човеци гиганти
+                                </p>
+
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title text-center"><i class="ti-check"></i> Заключение</h5>
+                                <p class="card-text "><h3 class="text-center">Фалшива Новина</h3></p>
+                                <hr>
+                                <p class="small text-center">Допълнителна Информация</p>
+                                <p class="small">Свързани Източници / Медии : 5 </p>
+                                <p class="small">Дата на дезинформацията: 2018.06.12</p>
+                                <p class="small">Засегнати Страни: България</p>
+                                <p class="small">Източник на дезинформацията: България</p>
+                                <p class="small muted">Семантичен Анализ на дезинформацията: Очаквайте скоро!</p>
+
+
+                            </div>
+                        </div>
+                        <h2 class="font-weight-bold">{{$article->title}}</h2>
+
+                        <div class="">
+                            <img src="{{$article->imageurl}}" alt="Статия Изображение"
+                                 class="article-featured-image float-left"
+                            />
+                        </div>
+
+                        <div class="article-text">
+
+                            {!!$article->body!!}
+                        </div>
                     </div>
                 </div>
              </p>
