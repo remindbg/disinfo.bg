@@ -26,7 +26,7 @@ class ArticleController extends Controller
     public function index()
     {
         $articles = Article::with('categories')
-            ->orderBy('created_at', 'desc')
+            ->orderBy('id', 'desc')
             ->paginate(8);
 
 
@@ -73,6 +73,7 @@ class ArticleController extends Controller
         //$article->category_id = 1;
 
         $tags = $request['tags'];
+        $tags = trim($tags);
         $tags = explode(',', $tags);
         $tagIds = [];
         foreach ($tags as $tagName) {

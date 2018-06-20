@@ -20,9 +20,8 @@ Route::get('/desinfo', function () {
 });
 
 
-Route::get('/admin', function () {
-    return view('layouts.adminlayout');
-})->middleware('auth');;
+Route::get('/admin/', 'Admin\ArticleController@index');
+
  // Route::get('/home', 'HomeController@index')->name('home');
 //Route::get('/','ArticleController@index')->name('allarticles');
 Route::get('/','ArticleController@homepage')->name('homepage'); // real homepage

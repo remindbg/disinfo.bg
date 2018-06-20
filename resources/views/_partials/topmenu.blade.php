@@ -13,38 +13,27 @@
                 <li>
                     <a class="has-arrow " href="#')}}" aria-expanded="false">
                         <i class="mdi mdi-block-helper"></i>
-                        <span class="hide-menu">Дезинформация/ Фейк</span>
+                        <span class="hide-menu">Дезинформация/Фейк</span>
                     </a>
                     <ul aria-expanded="false" class="collapse">
                         <li>
-                            <a href="#">Всички</a>
+                            <a href="/">Всички</a>
                         </li>
                         <li>
                             <a href="#">Популярни</a>
                         </li>
                         <li>
-                            <a class="has-arrow" href="#" aria-expanded="false">Сортиране</a>
-                            <ul aria-expanded="false" class="collapse">
-                                <li class="disabled">
-                                    <a href="#">Последните 7 дни</a>
-                                </li>
-                                <li>
-                                    <a href="#">Последни 30 дни</a>
-                                </li>
-                            </ul>
+                            <a href="#">Етикети</a>
                         </li>
                         <li>
-                            <a href="#">По Етикети</a>
-                        </li>
-                        <li>
-                            <a href="#">Предложете Новина</a>
+                            <a href="# ">Предложете Новина</a>
                         </li>
                     </ul>
                 </li>
                 <li>
                     <a class="has-arrow " href="#" aria-expanded="false">
                         <i class="mdi mdi-bullseye"></i>
-                        <span class="hide-menu">Статии</span>
+                        <span class="hide-menu">Категории</span>
                     </a>
                     <ul aria-expanded="false" class="collapse">
                         @foreach($allcats as $cat)

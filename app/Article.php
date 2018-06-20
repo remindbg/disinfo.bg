@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Carbon\Carbon;
 class Article extends Model
 {
+	// test
     protected $appends = ['bgmonth'];
     protected $guarded = [];
     protected $dates = [ 'created_at' ,'updated_at' ];

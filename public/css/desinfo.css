@@ -32,3 +32,8 @@
     padding:0;
     margin:0;
 }
+
+.sidebar-nav ul li a.active {
+    color:black;
+}
+

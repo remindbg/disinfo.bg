@@ -35,7 +35,9 @@
         gtag('js', new Date());
         gtag('config', 'UA-121116559-1');
     </script>
-
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Arvo:500');
+    </style>
 </head>
 
 <body class="fix-header fix-sidebar card-no-border logo-center">
@@ -176,6 +178,14 @@
                             </ul>
                         </div>
                     </li>
+                    @if (Auth::check())
+                        <li>
+                            <a href="/admin/"  target="_blank">
+                                <i class="ti-settings"></i> Admin Panel</a>
+                        </li>
+                    @else
+
+                @endif
                     <!-- ============================================================== -->
                     <!-- Language -->
                     <!-- ============================================================== -->

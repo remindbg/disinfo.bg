@@ -1,7 +1,7 @@
 @extends('layouts.front')
 
 @section('meta')
-    <title>Статии, Новини, Анализи | Desinfo.Info</title>
+    <title>Случаи на Дезинформация и Фалшиви Новини| Desinfo.Info</title>
     <meta name="title" content="Desinfo.Info - Случаи на Дезинформация в българските медии">
     <meta name="description" content="Секция Новини, Статии и Анализи - desinfo.info - бъдете информирани">
     <meta property="og:url"         content="{{url()->current()}}" />

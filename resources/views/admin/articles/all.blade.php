@@ -15,6 +15,7 @@
                             <th>Заглавие</th>
                             <th>Одобрена?</th>
                             <th>Прегледа</th>
+                            <th>Тип</th>
                             <th class="text-nowrap">Action</th>
                         </tr>
                         </thead>
@@ -30,6 +31,12 @@
                             @endif
                                 <td>{{$article->views}}</td>
                             <td>{{$article->created_at}}</td>
+                            <td>@if($article->articleType == 1)
+                                Дезинформация
+                                 @else
+                                Блог
+                                 @endif
+                            </td>
                             <td class="text-nowrap">
                                 <div class="btn btn-warning"> <a href="/admin/articles/edit/{{$article->id}}"><i class="fa
                                 fa-pencil
