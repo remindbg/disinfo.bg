@@ -84,6 +84,7 @@ class ArticleController extends Controller
                 $tagIds[] = $tag->id;
             }
         }
+        //dd($request['articleType']);
         if($request['articleType'] == 1) {
             $article->articleType = 1;
         }
@@ -156,6 +157,12 @@ class ArticleController extends Controller
             if ($tag) {
                 $tagIds[] = $tag->id;
             }
+        }
+        if($request['articleType'] == 1) {
+            $article->articleType = 1;
+        }
+        else {
+            $article->articleType = 2;
         }
         if($request['articleType'] == 1) {
             $article->summary_desinfo = $request['summary_desinfo'];
