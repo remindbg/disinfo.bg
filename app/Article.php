@@ -10,6 +10,9 @@ class Article extends Model
     protected $guarded = [];
     protected $dates = [ 'created_at' ,'updated_at' ];
 
+    public function articleType() {
+        return $this->belongsTo(ArticleType::class);
+    }
 
 
     public function sources() {
